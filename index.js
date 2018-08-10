@@ -2,11 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { StarFractal } from './designs/Star'
+import { FriederLines } from './designs/FriederLines'
 
-const App = () => (
-  <StarFractal length={120} width={500} height={500} sides={4}>
-    {svg => console.log(svg)}
-  </StarFractal>
-)
+const App = () => <FriederLines scale="3" />
 
 ReactDOM.render(<App />, document.getElementById('root'))
