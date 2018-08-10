@@ -65,10 +65,10 @@ export class StarFractal extends React.Component {
     this.TwoJS.update()
   }
 
-  componentDidUpdate() {
-    renderFractal(this.props.length, this.TwoJS, this.props.sides)
-    this.TwoJS.update()
-  }
+  // componentDidUpdate() {
+  //   renderFractal(this.props.length, this.TwoJS, this.props.sides)
+  //   this.TwoJS.update()
+  // }
 
   render() {
     return <div id="star-fractal">{this.props.children(this.state.svg)}</div>
