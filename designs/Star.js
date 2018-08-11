@@ -12,7 +12,8 @@ export class StarFractal extends React.Component {
     // Number of sides of star
     sides: 8,
     stroke: 'mistyrose',
-    fill: 'pink'
+    fill: 'pink',
+    bg: '#2d121a'
   }
 
   static propTypes = {
@@ -89,6 +90,12 @@ export class StarFractal extends React.Component {
   }
 
   render() {
-    return <div id="star-fractal" />
+    const styles = {
+      background: this.props.bg,
+      display: 'inline-block',
+      margin: '20px auto'
+    }
+
+    return <div id="star-fractal" style={styles} />
   }
 }
