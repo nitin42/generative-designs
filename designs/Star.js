@@ -2,45 +2,26 @@ import React from 'react'
 import Two from 'two.js'
 import PropTypes from 'prop-types'
 
-const drawStar = (inst, x, y, radius, sides) => {
-  const star = inst.makeStar(x, y, radius, radius - 30, sides)
-
-  star.fill = 'pink'
-  star.stroke = 'mistyrose'
-
-  if (radius > 12) {
-    drawStar(inst, x + radius / 2, y, radius / 2, sides)
-    drawStar(inst, x - radius / 2, y, radius / 2, sides)
-    drawStar(inst, x, y + radius / 2, radius / 2, sides)
-    drawStar(inst, x, y - radius / 2, radius / 2, sides)
-  }
-}
-
-const renderFractal = (value, inst, sides) => {
-  drawStar(inst, inst.width / 2, inst.height / 2, value, sides)
-}
-
 export class StarFractal extends React.Component {
-  state = {
-    // Reference to rendered SVG
-    svg: null
-  }
-
   static defaultProps = {
     // Length of the fractal
     length: 50,
     // Canvas dimension
-    height: 200,
-    width: 200,
+    height: 500,
+    width: 500,
     // Number of sides of star
-    sides: 8
+    sides: 8,
+    stroke: 'mistyrose',
+    fill: 'pink'
   }
 
   static propTypes = {
     length: PropTypes.number,
     height: PropTypes.number,
     width: PropTypes.number,
-    sides: PropTypes.number
+    sides: PropTypes.number,
+    stroke: PropTypes.string,
+    fill: PropTypes.string
   }
 
   // TwoJS instance
@@ -48,29 +29,66 @@ export class StarFractal extends React.Component {
 
   componentDidMount() {
     const container = document.getElementById('star-fractal')
-
-    this.TwoJS = new Two({
+    const params = {
       width: this.props.width,
       height: this.props.height
-    }).appendTo(container)
+    }
 
-    renderFractal(this.props.length, this.TwoJS, this.props.sides)
-    this.TwoJS.update()
+    this.TwoJS = new Two(params).appendTo(container)
 
-    this.setState({ svg: this.TwoJS.renderer.domElement })
+    this.flush({ shouldDequeue: false })
   }
 
-  componentWillReceiveProps(nextProps) {
-    renderFractal(nextProps.length, this.TwoJS, this.props.sides)
-    this.TwoJS.update()
+  drawFractal = (instance, props) => {
+    this.draw(instance, instance.width / 2, instance.height / 2, props)
   }
 
-  // componentDidUpdate() {
-  //   renderFractal(this.props.length, this.TwoJS, this.props.sides)
-  //   this.TwoJS.update()
-  // }
+  draw = (instance, x, y, props) => {
+    const { length: radius, sides, stroke, fill } = props
+
+    const star = instance.makeStar(x, y, radius, radius - 30, sides)
+
+    star.fill = fill
+    star.stroke = stroke
+
+    if (radius > 12) {
+      this.drawStars(instance, x + radius / 2, y, radius / 2, sides)
+      this.drawStars(instance, x - radius / 2, y, radius / 2, sides)
+      this.drawStars(instance, x, y + radius / 2, radius / 2, sides)
+      this.drawStars(instance, x, y - radius / 2, radius / 2, sides)
+    }
+  }
+
+  // This is required for generating different stars
+  drawStars = (inst, x, y, radius, sides) => {
+    const star = inst.makeStar(x, y, radius, radius - 30, sides)
+
+    star.fill = 'pink'
+    star.stroke = 'mistyrose'
+
+    if (radius > 12) {
+      this.drawStars(inst, x + radius / 2, y, radius / 2, sides)
+      this.drawStars(inst, x - radius / 2, y, radius / 2, sides)
+      this.drawStars(inst, x, y + radius / 2, radius / 2, sides)
+      this.drawStars(inst, x, y - radius / 2, radius / 2, sides)
+    }
+  }
+
+  componentDidUpdate() {
+    this.flush({ shouldDequeue: true })
+  }
+
+  flush = ({ shouldDequeue }) => {
+    if (shouldDequeue) {
+      this.TwoJS && this.TwoJS.clear()
+    }
+
+    this.drawFractal(this.TwoJS, this.props)
+
+    this.TwoJS.update()
+  }
 
   render() {
-    return <div id="star-fractal">{this.props.children(this.state.svg)}</div>
+    return <div id="star-fractal" />
   }
 }
