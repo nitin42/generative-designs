@@ -9,6 +9,8 @@ export class FriederLines extends React.Component {
     bg: '#2d121a',
     scaleOffset: 0.08,
     rotationOffset: 4,
+    height: 550,
+    width: 520,
     callback: ctrl => {}
   }
 
@@ -17,7 +19,9 @@ export class FriederLines extends React.Component {
     strokeVert: PropTypes.string,
     strokeHor: PropTypes.string,
     scaleOffset: PropTypes.number,
-    rotationOffset: PropTypes.number
+    rotationOffset: PropTypes.number,
+    height: PropTypes.number,
+    width: PropTypes.number
   }
 
   // Main TwoJS instance
@@ -25,7 +29,7 @@ export class FriederLines extends React.Component {
 
   componentDidMount() {
     const container = document.getElementById('frieder')
-    const params = { width: 520, height: 550 }
+    const params = { width: this.props.width, height: this.props.height }
 
     this.TwoJS = new Two(params).appendTo(container)
     this.props.callback(this.TwoJS)

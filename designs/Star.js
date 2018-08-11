@@ -13,7 +13,7 @@ export class StarFractal extends React.Component {
     sides: 8,
     stroke: 'mistyrose',
     fill: 'pink',
-    bg: '#2d121a'
+    bg: ''
   }
 
   static propTypes = {

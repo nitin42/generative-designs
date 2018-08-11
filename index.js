@@ -7,7 +7,7 @@ import { WavyLines } from './designs/WavePatternLines'
 
 class App extends React.Component {
   state = {
-    value: 15,
+    value: 2,
     instance: null,
     sides: 4
   }
@@ -32,13 +32,18 @@ class App extends React.Component {
         <input
           type="range"
           min="1"
-          max="200"
+          max="10"
           value={this.state.value}
           onChange={this.handleInput}
         />
-        <StarFractal length={this.state.value} sides={this.state.sides} />
+        <WavyLines
+          callback={instance => this.setState({ instance })}
+          rotationOffset={this.state.value}
+        />
+        <button onClick={e => this.state.instance.play()}>Play</button>
+        <button onClick={e => this.state.instance.pause()}>Pause</button>
+        {/* <StarFractal length={this.state.value} sides={this.state.sides} /> */}
         {/* <button onClick={e => this.state.instance.pause()}>Pause</button>
-				<button onClick={e => this.state.instance.play()}>Play</button>
 				<FriederLines
 					scaleOffset={0.08}
 					rotationOffset={this.state.value}
