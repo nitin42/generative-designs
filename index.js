@@ -7,6 +7,7 @@ import { WavyLines } from './designs/WavePatternLines'
 import { Circles } from './designs/Circles'
 import { SottsassPattern } from './designs/Sottsass'
 import { DoublyTriangle } from './designs/DoublyTriangle'
+import { Checks } from './designs/Checks'
 
 class App extends React.Component {
   state = {
@@ -69,11 +70,17 @@ class App extends React.Component {
 					height={300}
 				/> */}
         {/* <Circles id="sottsass" rotationOffset={this.state.value} /> */}
-        <DoublyTriangle
+        {/* <DoublyTriangle
           id="triangle"
           style={{ background: '#f48097', display: 'inline-block' }}
           width={300}
           height={300}
+        /> */}
+        <Checks
+          id="checks"
+          width={300}
+          height={300}
+          style={{ background: '#ffffff', display: 'inline-block' }}
         />
       </div>
     )
