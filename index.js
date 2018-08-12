@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import { StarFractal } from './designs/Star'
 import { FriederLines } from './designs/FriederLines'
 import { WavyLines } from './designs/WavePatternLines'
+import { SottsassPattern } from './designs/Sottsass'
 
 class App extends React.Component {
   state = {
@@ -21,19 +22,19 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        Sides:{' '}
-        <input
-          type="range"
-          min="1"
-          max="40"
-          value={this.state.sides}
-          onChange={e => this.setState({ sides: parseInt(e.target.value) })}
-        />
+        {/* Sides:{' '} */}
+        {/* <input
+					type="range"
+					min="1"
+					max="40"
+					value={this.state.sides}
+					onChange={e => this.setState({ sides: parseInt(e.target.value) })}
+				/> */}
         Length:{' '}
         <input
           type="range"
           min="1"
-          max="200"
+          max="50"
           value={this.state.value}
           onChange={this.handleInput}
         />
@@ -54,15 +55,12 @@ class App extends React.Component {
 					strokeUp="#fbc8b8"
 					style={{ background: '#eee9fd', display: 'inline-block' }}
 				/> */}
-        <button onClick={e => this.state.instance.play()}>Play</button>
-        <button onClick={e => this.state.instance.pause()}>Pause</button>
-        <StarFractal
-          id="star-fractal"
-          length={this.state.value}
-          sides={this.state.sides}
-        />
+        {/* <button onClick={e => this.state.instance.play()}>Play</button>
+				<button onClick={e => this.state.instance.pause()}>Pause</button> */}
+        {/* <StarFractal id="star-fractal" length={this.state.value} sides={this.state.sides} /> */}
         {/* <button onClick={e => this.state.instance.pause()}>Pause</button>
 				 */}
+        <SottsassPattern id="sottsass" rotationOffset={this.state.value} />
       </div>
     )
   }
