@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { StarFractal } from './designs/Star'
 import { FriederLines } from './designs/FriederLines'
 import { WavyLines } from './designs/WavePatternLines'
-import { SottsassPattern } from './designs/Sottsass'
+import { Circles } from './designs/Circles'
 
 class App extends React.Component {
   state = {
@@ -60,7 +60,7 @@ class App extends React.Component {
         {/* <StarFractal id="star-fractal" length={this.state.value} sides={this.state.sides} /> */}
         {/* <button onClick={e => this.state.instance.pause()}>Pause</button>
 				 */}
-        <SottsassPattern id="sottsass" rotationOffset={this.state.value} />
+        <Circles id="sottsass" rotationOffset={this.state.value} />
       </div>
     )
   }

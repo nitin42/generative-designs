@@ -1,15 +1,15 @@
 import { createDesign } from './createDesign'
 import { startRotation } from '../animations/Rotation'
 
-const random = (max, min) => Math.floor(Math.random() * (max - min) + min)
+import { random } from '../utils'
 
 const colors = {
-  LINE1: '#ff4444',
-  LINE2: '#000000',
-  LINE3: '#b8bdc1'
+  CIRCLE_ONE: '#ff4444',
+  CIRCLE_TWO: '#000000',
+  CIRCLE_THREE: '#b8bdc1'
 }
 
-function draw(offset, color, instance) {
+function drawCircle(offset, color, instance) {
   const circles = []
 
   for (let x = 10; x <= instance.height; x += 15) {
@@ -28,13 +28,13 @@ function drawPattern(instance, props) {
   let renderedCircles = []
 
   for (let x = 20; x <= instance.width - 120; x += 20) {
-    renderedCircles.push(draw(x, colors.LINE1, instance))
+    renderedCircles.push(drawCircle(x, colors.CIRCLE_ONE, instance))
     x += 20
 
-    renderedCircles.push(draw(x, colors.LINE2, instance))
+    renderedCircles.push(drawCircle(x, colors.CIRCLE_TWO, instance))
     x += 20
 
-    renderedCircles.push(draw(x, colors.LINE3, instance))
+    renderedCircles.push(drawCircle(x, colors.CIRCLE_THREE, instance))
   }
 
   return renderedCircles
@@ -48,12 +48,12 @@ function sketch() {
   })
 }
 
-const SottsassPattern = createDesign(sketch)
+const Circles = createDesign(sketch)
 
-SottsassPattern.defaultProps = {
+Circles.defaultProps = {
   callback: ctrl => {},
   scaleOffset: 0.0245,
   rotationOffset: 4
 }
 
-export { SottsassPattern }
+export { Circles }
