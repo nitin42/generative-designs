@@ -1,0 +1,81 @@
+import { createDesign } from './createDesign'
+import { random } from '../utils'
+import { startRotation } from '../animations/Rotation'
+
+function drawLines(instance, props) {
+  const renderedLines = []
+
+  for (let y = 20; y <= 80; y += 5) {
+    for (let x = 20; x <= 80; x += 5) {
+      if (x % 10 == 0) {
+        const lineUp = instance.makeLine(
+          random(x, x + 1),
+          y,
+          random(x, x + 3),
+          random(y, y - 4)
+        )
+        lineUp.stroke = props.strokeUp
+        lineUp.linewidth = 0.3
+        const group = instance.makeGroup(lineUp)
+        group.scale = 3
+
+        renderedLines.push(lineUp)
+      } else {
+        const lineDown = instance.makeLine(
+          x,
+          random(y, y + 2),
+          random(x, x + 3),
+          random(y, y + 3)
+        )
+        lineDown.stroke = props.strokeDown
+        lineDown.linewidth = 0.3
+
+        const group = instance.makeGroup(lineDown)
+        group.scale = 3
+
+        renderedLines.push(lineDown)
+      }
+    }
+  }
+
+  return renderedLines
+}
+
+function drawCircles(instance, props) {
+  const circles = []
+  for (let y = 20; y <= 80; y += 4) {
+    for (let x = 20; x <= 80; x += 4) {
+      const circle = instance.makeCircle(x, y, random(0, 1.1))
+      circle.noStroke()
+      circle.fill = '#ffd700'
+      circle.opacity = 0.5
+      circle.linewidth = 0.5
+      const group = instance.makeGroup(circle)
+      group.scale = 3
+      circles.push(circle)
+    }
+  }
+
+  return circles
+}
+
+function sketch() {
+  const circles = drawCircles(this.TwoJS, this.props)
+
+  const lines = drawLines(this.TwoJS, this.props)
+
+  startRotation.call(this, circles, this.props)
+  startRotation.call(this, lines, this.props)
+}
+
+const SottsassPattern = createDesign(sketch)
+
+SottsassPattern.defaultProps = {
+  callback: () => {},
+  strokeUp: '#ffc0cb',
+  strokeDown: '#c6e2ff',
+  scaleOffset: 0.02,
+  rotationOffset: 4
+}
+
+export { SottsassPattern }

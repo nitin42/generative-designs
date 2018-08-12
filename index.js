@@ -5,6 +5,8 @@ import { StarFractal } from './designs/Star'
 import { FriederLines } from './designs/FriederLines'
 import { WavyLines } from './designs/WavePatternLines'
 import { Circles } from './designs/Circles'
+import { SottsassPattern } from './designs/Sottsass'
+import { DoublyTriangle } from './designs/DoublyTriangle'
 
 class App extends React.Component {
   state = {
@@ -59,8 +61,20 @@ class App extends React.Component {
 				<button onClick={e => this.state.instance.pause()}>Pause</button> */}
         {/* <StarFractal id="star-fractal" length={this.state.value} sides={this.state.sides} /> */}
         {/* <button onClick={e => this.state.instance.pause()}>Pause</button>
-				 */}
-        <Circles id="sottsass" rotationOffset={this.state.value} />
+         */}
+        {/* <SottsassPattern
+					id="sottsass"
+					style={{ background: '#f48097', display: 'inline-block' }}
+					width={300}
+					height={300}
+				/> */}
+        {/* <Circles id="sottsass" rotationOffset={this.state.value} /> */}
+        <DoublyTriangle
+          id="triangle"
+          style={{ background: '#f48097', display: 'inline-block' }}
+          width={300}
+          height={300}
+        />
       </div>
     )
   }
