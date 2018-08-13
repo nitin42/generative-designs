@@ -5,8 +5,8 @@ import { startRotation } from '../animations/Rotation'
 function drawLines(instance, props) {
   const renderedLines = []
 
-  for (let y = 20; y <= 80; y += 5) {
-    for (let x = 20; x <= 80; x += 5) {
+  for (let y = 0; y <= 100; y += 5) {
+    for (let x = 0; x <= 100; x += 5) {
       if (x % 10 == 0) {
         const lineUp = instance.makeLine(
           random(x, x + 1),
@@ -16,6 +16,7 @@ function drawLines(instance, props) {
         )
         lineUp.stroke = props.strokeUp
         lineUp.linewidth = 0.3
+
         const group = instance.makeGroup(lineUp)
         group.scale = 3
 
@@ -43,12 +44,12 @@ function drawLines(instance, props) {
 
 function drawCircles(instance, props) {
   const circles = []
-  for (let y = 20; y <= 80; y += 4) {
-    for (let x = 20; x <= 80; x += 4) {
+  for (let y = 0; y <= 100; y += 4) {
+    for (let x = 0; x <= 100; x += 4) {
       const circle = instance.makeCircle(x, y, random(0, 1.1))
       circle.noStroke()
       circle.fill = '#ffd700'
-      circle.opacity = 0.5
+      circle.opacity = 0.3
       circle.linewidth = 0.5
       const group = instance.makeGroup(circle)
       group.scale = 3
