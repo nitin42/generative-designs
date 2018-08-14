@@ -15,7 +15,6 @@ const Animations = {
   rotation: startRotation
 }
 
-// Main default export
 const generative = {
   // Create custom generative art using this HOC design constructor
   createDesign,
