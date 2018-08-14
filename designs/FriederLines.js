@@ -46,31 +46,21 @@ FriederLines.displayName = 'FriederLines'
 FriederLines.defaultProps = {
   strokeVert: 'mistyrose',
   strokeHor: 'pink',
-
-  bg: '#2d121a',
-
   scaleOffset: 0.08,
   rotationOffset: 4,
-
   height: 550,
   width: 520,
-
   callback: ctrl => {}
 }
 
 FriederLines.propTypes = {
   strokeVert: PropTypes.string,
   strokeHor: PropTypes.string,
-
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-
   height: PropTypes.number,
   width: PropTypes.number,
-
-  callback: PropTypes.func,
-
-  bg: PropTypes.string
+  callback: PropTypes.func
 }
 
 export { FriederLines }

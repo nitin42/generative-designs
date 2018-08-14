@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import { createDesign } from './createDesign'
 import { startRotation } from '../animations/Rotation'
 
@@ -14,7 +16,6 @@ function drawCircle(offset, color, instance) {
 
   for (let x = 10; x <= instance.height; x += 15) {
     const circle = instance.makeCircle(offset, x, random(0, 10), random(0, 10))
-
     circle.fill = color
     circle.noStroke()
 
@@ -54,6 +55,14 @@ Circles.defaultProps = {
   callback: ctrl => {},
   scaleOffset: 0.0245,
   rotationOffset: 4
+}
+
+Circles.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  scaleOffset: PropTypes.number,
+  rotationOffset: PropTypes.number,
+  callback: PropTypes.func
 }
 
 export { Circles }

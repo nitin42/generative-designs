@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import { createDesign } from './createDesign'
 import { startRotation } from '../animations/Rotation'
 import { random } from '../utils'
@@ -77,7 +79,6 @@ function drawLines(instance, props) {
 
 function sketch() {
   const triangles = drawTriangle(this.TwoJS, this.props)
-
   const lines = drawLines(this.TwoJS, this.props)
 
   startRotation.call(this, triangles, this.props)
@@ -86,12 +87,24 @@ function sketch() {
 
 const DoublyTriangle = createDesign(sketch)
 
+DoublyTriangle.displayName = 'DoublyTriangle'
+
 DoublyTriangle.defaultProps = {
   callback: ctrl => {},
   scaleOffset: 0.05,
   rotationOffset: 2,
   strokeUp: '#ffc0cb',
   strokeDown: '#c6e2ff'
+}
+
+DoublyTriangle.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  strokeUp: PropTypes.string,
+  strokeDown: PropTypes.string,
+  scaleOffset: PropTypes.number,
+  rotationOffset: PropTypes.number,
+  callback: PropTypes.func
 }
 
 export { DoublyTriangle }

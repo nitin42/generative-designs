@@ -4,7 +4,7 @@ import { startRotation } from '../animations/Rotation'
 import { createDesign } from './createDesign'
 
 // Draw wave line pattern
-function drawLines(instance, props) {
+function drawWavyLines(instance, props) {
   const renderedLines = []
 
   for (let y = 20; y <= 80; y += 5) {
@@ -12,6 +12,7 @@ function drawLines(instance, props) {
       if (x % 10 == 0) {
         const lineUp = instance.makeLine(x, y, x + 3, y - 3)
         lineUp.stroke = props.strokeUp
+        lineUp.linewidth = 0.7
 
         const group = instance.makeGroup(lineUp)
         group.scale = 3
@@ -20,6 +21,7 @@ function drawLines(instance, props) {
       } else {
         const lineDown = instance.makeLine(x, y, x + 3, y + 3)
         lineDown.stroke = props.strokeDown
+        lineDown.linewidth = 0.7
 
         const group = instance.makeGroup(lineDown)
         group.scale = 3
@@ -32,10 +34,8 @@ function drawLines(instance, props) {
   return renderedLines
 }
 
-// A function to render the lines. Use this function to perform animations and other two.js stuff
-// It is invoked on every state update.
 function sketch() {
-  const renderedLines = drawLines(this.TwoJS, this.props)
+  const renderedLines = drawWavyLines(this.TwoJS, this.props)
   startRotation.call(this, renderedLines, this.props)
 }
 

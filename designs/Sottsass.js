@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import { createDesign } from './createDesign'
 import { random } from '../utils'
 import { startRotation } from '../animations/Rotation'
@@ -43,7 +45,8 @@ function drawLines(instance, props) {
 }
 
 function drawCircles(instance, props) {
-  const circles = []
+  const renderedCircles = []
+
   for (let y = 0; y <= 100; y += 4) {
     for (let x = 0; x <= 100; x += 4) {
       const circle = instance.makeCircle(x, y, random(0, 1.1))
@@ -51,20 +54,22 @@ function drawCircles(instance, props) {
       circle.fill = '#ffd700'
       circle.opacity = 0.3
       circle.linewidth = 0.5
+
       const group = instance.makeGroup(circle)
       group.scale = 3
-      circles.push(circle)
+
+      renderedCircles.push(circle)
     }
   }
 
-  return circles
+  return renderedCircles
 }
 
 function sketch() {
   const circles = drawCircles(this.TwoJS, this.props)
-
   const lines = drawLines(this.TwoJS, this.props)
 
+  // Rotate lines and circles
   startRotation.call(this, circles, this.props)
   startRotation.call(this, lines, this.props)
 }
@@ -76,7 +81,21 @@ SottsassPattern.defaultProps = {
   strokeUp: '#ffc0cb',
   strokeDown: '#c6e2ff',
   scaleOffset: 0.02,
-  rotationOffset: 4
+  rotationOffset: 4,
+  width: 500,
+  height: 500
 }
+
+SottsassPattern.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  strokeUp: PropTypes.string,
+  strokeDown: PropTypes.string,
+  scaleOffset: PropTypes.number,
+  rotationOffset: PropTypes.number,
+  callback: PropTypes.func
+}
+
+SottsassPattern.displayName = 'Sottsass Pattern'
 
 export { SottsassPattern }
