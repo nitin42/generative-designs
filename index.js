@@ -13,7 +13,7 @@ import { AbstractPoly } from './designs/AbstractPoly'
 
 class App extends React.Component {
   render() {
-    return <AbstractPoly id="AbstractPoly" />
+    return <StarFractal id="dt" />
   }
 }
 

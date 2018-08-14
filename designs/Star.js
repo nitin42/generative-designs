@@ -47,14 +47,14 @@ StarFractal.displayName = 'StarFractal'
 
 StarFractal.defaultProps = {
   // Length of the fractal
-  length: 50,
-  height: 500,
-  width: 500,
+  length: 120,
+  height: 400,
+  width: 400,
   // Number of sides of star
   sides: 8,
   stroke: 'mistyrose',
   fill: 'pink',
-  bg: '',
+  style: { display: 'inline-block' },
   callback: instance => {}
 }
 

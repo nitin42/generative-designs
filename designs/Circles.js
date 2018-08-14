@@ -54,7 +54,9 @@ const Circles = createDesign(sketch)
 Circles.defaultProps = {
   callback: ctrl => {},
   scaleOffset: 0.0245,
-  rotationOffset: 4
+  rotationOffset: 4,
+  width: 400,
+  height: 300
 }
 
 Circles.propTypes = {

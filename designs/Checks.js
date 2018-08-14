@@ -6,8 +6,8 @@ import { startRotation } from '../animations/Rotation'
 function drawChecks(instance, props) {
   const renderedLines = []
 
-  for (let x = 0; x <= instance.width; x += 20) {
-    for (let y = 0; y <= instance.height; y += 20) {
+  for (let x = -15; x <= instance.width; x += 20) {
+    for (let y = -15; y <= instance.height; y += 20) {
       const line = instance.makeLine(x, y, x + 50, y)
       line.stroke = props.stroke
 
@@ -15,8 +15,8 @@ function drawChecks(instance, props) {
     }
   }
 
-  for (let x = 0; x <= instance.width; x += 20) {
-    for (let y = 0; y <= instance.height; y += 20) {
+  for (let x = -15; x <= instance.width; x += 20) {
+    for (let y = -15; y <= instance.height; y += 20) {
       const line = instance.makeLine(x, y, x, y + 50)
       line.stroke = props.stroke
 
@@ -39,7 +39,10 @@ Checks.defaultProps = {
   callback: inst => {},
   scaleOffset: 0.14,
   rotationOffset: 1.5,
-  stroke: '#babcc0'
+  stroke: '#babcc0',
+  width: 300,
+  height: 300,
+  style: { display: 'inline-block' }
 }
 
 Checks.propTypes = {

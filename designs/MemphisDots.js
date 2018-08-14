@@ -9,7 +9,7 @@ function drawDots(instance, props) {
 
   for (let x = 20; x <= 280; x += 15) {
     for (let y = 20; y <= 280; y += 15) {
-      const circle = instance.makeCircle(x, y, 1.8)
+      const circle = instance.makeCircle(x, y, 1)
       circle.fill = '#00004c'
       circle.noStroke()
 
@@ -31,8 +31,9 @@ MemphisDots.defaultProps = {
   callback: inst => {},
   scaleOffset: 0.0245,
   rotationOffset: 4,
-  height: 500,
-  width: 500
+  height: 300,
+  width: 300,
+  style: { background: '#ff7eba', display: 'inline-block' }
 }
 
 MemphisDots.propTypes = {

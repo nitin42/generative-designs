@@ -76,7 +76,7 @@ AbstractPoly.defaultProps = {
   scaleOffset: 0.0245,
   rotationOffset: 4,
   width: 480,
-  height: 450,
+  height: 430,
   style: { background: '#fff1f8', display: 'inline-block' }
 }
 

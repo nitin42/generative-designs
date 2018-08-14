@@ -10,10 +10,10 @@ function drawLines(instance, props) {
     if (x <= 50) {
       const line1 = instance.makeLine(x, 20, x, 85)
       line1.stroke = props.strokeVert
-      line1.linewidth = 0.25
+      line1.linewidth = 0.5
 
       const group = instance.makeGroup(line1)
-      group.scale = 3
+      group.scale = props.scale
       renderedLines.push(line1)
     }
   }
@@ -22,11 +22,11 @@ function drawLines(instance, props) {
     if (y <= 80) {
       const line2 = instance.makeLine(15, y, 70, y)
       line2.stroke = props.strokeHor
-      line2.linewidth = 0.25
+      line2.linewidth = 0.5
 
       const group = instance.makeGroup(line2)
 
-      group.scale = 3
+      group.scale = props.scale
       renderedLines.push(line2)
     }
   }
@@ -48,8 +48,10 @@ FriederLines.defaultProps = {
   strokeHor: 'pink',
   scaleOffset: 0.08,
   rotationOffset: 4,
-  height: 550,
-  width: 520,
+  height: 200,
+  width: 200,
+  scale: 2.2,
+  style: { display: 'inline-block', background: '#ff7eba' },
   callback: ctrl => {}
 }
 
@@ -60,6 +62,7 @@ FriederLines.propTypes = {
   rotationOffset: PropTypes.number,
   height: PropTypes.number,
   width: PropTypes.number,
+  scale: PropTypes.number,
   callback: PropTypes.func
 }
 

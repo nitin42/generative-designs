@@ -15,7 +15,7 @@ function drawWavyLines(instance, props) {
         lineUp.linewidth = 0.7
 
         const group = instance.makeGroup(lineUp)
-        group.scale = 3
+        group.scale = props.scale
 
         renderedLines.push(lineUp)
       } else {
@@ -24,7 +24,7 @@ function drawWavyLines(instance, props) {
         lineDown.linewidth = 0.7
 
         const group = instance.makeGroup(lineDown)
-        group.scale = 3
+        group.scale = props.scale
 
         renderedLines.push(lineDown)
       }
@@ -42,12 +42,14 @@ function sketch() {
 const WavyLines = createDesign(sketch)
 
 WavyLines.defaultProps = {
-  width: 300,
-  height: 300,
-  strokeUp: 'mistyrose',
+  width: 260,
+  height: 250,
+  strokeUp: '#FFEBE1',
   strokeDown: 'pink',
   scaleOffset: 0.08,
   rotationOffset: 4,
+  scale: 2.5,
+  style: { background: '#cd6090', display: 'inline-block' },
   callback: instance => {}
 }
 
@@ -58,7 +60,8 @@ WavyLines.propTypes = {
   strokeDown: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  scale: PropTypes.number
 }
 
 WavyLines.displayName = 'WavyLines'

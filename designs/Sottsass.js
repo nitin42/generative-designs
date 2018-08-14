@@ -82,8 +82,9 @@ SottsassPattern.defaultProps = {
   strokeDown: '#c6e2ff',
   scaleOffset: 0.02,
   rotationOffset: 4,
-  width: 500,
-  height: 500
+  width: 300,
+  height: 300,
+  style: { background: '#ff7eba', display: 'inline-block' }
 }
 
 SottsassPattern.propTypes = {
