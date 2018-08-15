@@ -30,7 +30,7 @@ function drawChecks(instance, props) {
 function sketch() {
   const checks = drawChecks(this.TwoJS, this.props)
 
-  this.props.autoplay ? startRotation.call(this, checks, this.props) : null
+  startRotation.call(this, checks, this.props)
 }
 
 const Checks = createDesign(sketch)

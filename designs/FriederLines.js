@@ -36,9 +36,7 @@ function drawLines(instance, props) {
 
 function sketch() {
   const renderedLines = drawLines(this.TwoJS, this.props)
-  this.props.autoplay
-    ? startRotation.call(this, renderedLines, this.props)
-    : null
+  startRotation.call(this, renderedLines, this.props)
 }
 
 const FriederLines = createDesign(sketch)

@@ -28,7 +28,7 @@ function drawCircle(offset, color, instance) {
 function drawPattern(instance, props) {
   let renderedCircles = []
 
-  for (let x = 40; x <= instance.width - 100; x += 20) {
+  for (let x = 10; x <= instance.width - 100; x += 20) {
     renderedCircles.push(drawCircle(x, colors.CIRCLE_ONE, instance))
     x += 20
 
@@ -44,11 +44,9 @@ function drawPattern(instance, props) {
 function sketch() {
   const circles = drawPattern(this.TwoJS, this.props)
 
-  this.props.autoplay
-    ? circles.forEach(objects => {
-        startRotation.call(this, objects, this.props)
-      })
-    : null
+  circles.forEach(objects => {
+    startRotation.call(this, objects, this.props)
+  })
 }
 
 const Circles = createDesign(sketch)

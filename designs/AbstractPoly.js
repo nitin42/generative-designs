@@ -67,9 +67,7 @@ function drawPolygon(instance, props) {
 function sketch() {
   const polys = drawPolygon(this.TwoJS, this.props)
 
-  this.props.autoplay
-    ? polys.forEach(poly => startRotation.call(this, poly, this.props))
-    : null
+  polys.forEach(poly => startRotation.call(this, poly, this.props))
 }
 
 const AbstractPoly = createDesign(sketch)

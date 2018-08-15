@@ -36,9 +36,7 @@ function drawWavyLines(instance, props) {
 
 function sketch() {
   const renderedLines = drawWavyLines(this.TwoJS, this.props)
-  this.props.autoplay
-    ? startRotation.call(this, renderedLines, this.props)
-    : null
+  startRotation.call(this, renderedLines, this.props)
 }
 
 const WavyLines = createDesign(sketch)

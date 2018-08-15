@@ -69,11 +69,9 @@ function sketch() {
   const circles = drawCircles(this.TwoJS, this.props)
   const lines = drawLines(this.TwoJS, this.props)
 
-  if (this.props.autoplay) {
-    // Rotate lines and circles
-    startRotation.call(this, circles, this.props)
-    startRotation.call(this, lines, this.props)
-  }
+  // Rotate lines and circles
+  startRotation.call(this, circles, this.props)
+  startRotation.call(this, lines, this.props)
 }
 
 const SottsassPattern = createDesign(sketch)

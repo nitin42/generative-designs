@@ -25,7 +25,7 @@ function drawDots(instance, props) {
 function sketch() {
   const dots = drawDots(this.TwoJS, this.props)
 
-  this.props.autoplay ? startRotation.call(this, dots, this.props) : null
+  startRotation.call(this, dots, this.props)
 }
 
 const MemphisDots = createDesign(sketch)

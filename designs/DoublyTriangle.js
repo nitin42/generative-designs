@@ -81,10 +81,8 @@ function sketch() {
   const triangles = drawTriangle(this.TwoJS, this.props)
   const lines = drawLines(this.TwoJS, this.props)
 
-  if (this.props.autoplay) {
-    startRotation.call(this, triangles, this.props)
-    startRotation.call(this, lines, this.props)
-  }
+  startRotation.call(this, triangles, this.props)
+  startRotation.call(this, lines, this.props)
 }
 
 const DoublyTriangle = createDesign(sketch)
