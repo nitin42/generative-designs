@@ -56,8 +56,7 @@ Circles.defaultProps = {
   scaleOffset: 0.0245,
   rotationOffset: 4,
   width: 400,
-  height: 300,
-  autoplay: true
+  height: 300
 }
 
 Circles.propTypes = {
@@ -65,8 +64,7 @@ Circles.propTypes = {
   height: PropTypes.number,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func,
-  autoplay: PropTypes.bool
+  callback: PropTypes.func
 }
 
 export { Circles }
