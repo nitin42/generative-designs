@@ -30,7 +30,7 @@ function drawChecks(instance, props) {
 function sketch() {
   const checks = drawChecks(this.TwoJS, this.props)
 
-  startRotation.call(this, checks, this.props)
+  this.props.autoplay ? startRotation.call(this, checks, this.props) : null
 }
 
 const Checks = createDesign(sketch)
@@ -42,7 +42,8 @@ Checks.defaultProps = {
   stroke: '#babcc0',
   width: 300,
   height: 300,
-  style: { display: 'inline-block' }
+  style: { display: 'inline-block' },
+  autoplay: true
 }
 
 Checks.propTypes = {
@@ -51,7 +52,8 @@ Checks.propTypes = {
   stroke: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  autoplay: PropTypes.bool
 }
 
 Checks.displayName = 'Checks'

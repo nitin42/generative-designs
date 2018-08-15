@@ -9,7 +9,7 @@ function drawOddHex(instance, len, y) {
   let count = 0
   const renderedHex = []
 
-  for (let x = len + 18; x <= instance.width - 40; x += 50) {
+  for (let x = len + 25; x <= instance.width - 40; x += 50) {
     if (count % 2 === 0) {
       const poly = instance.makePolygon(x, y, 10, 6)
       poly.fill = 'pink'
@@ -32,7 +32,7 @@ function drawEvenHex(instance, len, y) {
   let count = 0
   const renderedHex = []
 
-  for (let x = len + 15; x <= instance.width - 70; x += 50) {
+  for (let x = len + 25; x <= instance.width - 70; x += 50) {
     if (count % 2 === 0) {
       const poly = instance.makePolygon(x, y, 10, 6)
       poly.fill = '#ea8e6c'
@@ -66,7 +66,10 @@ function drawPolygon(instance, props) {
 
 function sketch() {
   const polys = drawPolygon(this.TwoJS, this.props)
-  polys.forEach(poly => startRotation.call(this, poly, this.props))
+
+  this.props.autoplay
+    ? polys.forEach(poly => startRotation.call(this, poly, this.props))
+    : null
 }
 
 const AbstractPoly = createDesign(sketch)
@@ -77,7 +80,8 @@ AbstractPoly.defaultProps = {
   rotationOffset: 4,
   width: 480,
   height: 430,
-  style: { background: '#fff1f8', display: 'inline-block' }
+  style: { background: '#fff1f8', display: 'inline-block' },
+  autoplay: true
 }
 
 AbstractPoly.propTypes = {
@@ -85,7 +89,8 @@ AbstractPoly.propTypes = {
   height: PropTypes.number,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  autoplay: PropTypes.bool
 }
 
 export { AbstractPoly }

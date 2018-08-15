@@ -36,7 +36,9 @@ function drawLines(instance, props) {
 
 function sketch() {
   const renderedLines = drawLines(this.TwoJS, this.props)
-  startRotation.call(this, renderedLines, this.props)
+  this.props.autoplay
+    ? startRotation.call(this, renderedLines, this.props)
+    : null
 }
 
 const FriederLines = createDesign(sketch)
@@ -51,6 +53,7 @@ FriederLines.defaultProps = {
   height: 200,
   width: 200,
   scale: 2.2,
+  autoplay: true,
   style: { display: 'inline-block', background: '#ff7eba' },
   callback: ctrl => {}
 }
@@ -63,7 +66,8 @@ FriederLines.propTypes = {
   height: PropTypes.number,
   width: PropTypes.number,
   scale: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  autoplay: PropTypes.bool
 }
 
 export { FriederLines }

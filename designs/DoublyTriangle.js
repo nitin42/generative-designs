@@ -81,8 +81,10 @@ function sketch() {
   const triangles = drawTriangle(this.TwoJS, this.props)
   const lines = drawLines(this.TwoJS, this.props)
 
-  startRotation.call(this, triangles, this.props)
-  startRotation.call(this, lines, this.props)
+  if (this.props.autoplay) {
+    startRotation.call(this, triangles, this.props)
+    startRotation.call(this, lines, this.props)
+  }
 }
 
 const DoublyTriangle = createDesign(sketch)
@@ -97,7 +99,8 @@ DoublyTriangle.defaultProps = {
   strokeDown: '#c6e2ff',
   width: 300,
   height: 300,
-  style: { background: '#ff68af', display: 'inline-block' }
+  autoplay: true,
+  style: { background: '#ff68af' }
 }
 
 DoublyTriangle.propTypes = {
@@ -107,7 +110,8 @@ DoublyTriangle.propTypes = {
   strokeDown: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  autoplay: PropTypes.bool
 }
 
 export { DoublyTriangle }

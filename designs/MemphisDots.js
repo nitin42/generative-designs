@@ -13,6 +13,9 @@ function drawDots(instance, props) {
       circle.fill = '#00004c'
       circle.noStroke()
 
+      const group = instance.makeGroup(circle)
+      group.scale = props.scale
+
       renderedDots.push(circle)
     }
   }
@@ -22,7 +25,7 @@ function drawDots(instance, props) {
 function sketch() {
   const dots = drawDots(this.TwoJS, this.props)
 
-  startRotation.call(this, dots, this.props)
+  this.props.autoplay ? startRotation.call(this, dots, this.props) : null
 }
 
 const MemphisDots = createDesign(sketch)
@@ -33,7 +36,8 @@ MemphisDots.defaultProps = {
   rotationOffset: 4,
   height: 300,
   width: 300,
-  style: { background: '#ff7eba', display: 'inline-block' }
+  scale: 1,
+  autoplay: true
 }
 
 MemphisDots.propTypes = {
@@ -42,7 +46,8 @@ MemphisDots.propTypes = {
   fill: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  autoplay: PropTypes.bool
 }
 
 MemphisDots.displayName = 'Memphis Dots'

@@ -7,8 +7,8 @@ import { startRotation } from '../animations/Rotation'
 function drawLines(instance, props) {
   const renderedLines = []
 
-  for (let y = 0; y <= 100; y += 5) {
-    for (let x = 0; x <= 100; x += 5) {
+  for (let y = 0; y <= 200; y += 5) {
+    for (let x = 0; x <= 200; x += 5) {
       if (x % 10 == 0) {
         const lineUp = instance.makeLine(
           random(x, x + 1),
@@ -69,9 +69,11 @@ function sketch() {
   const circles = drawCircles(this.TwoJS, this.props)
   const lines = drawLines(this.TwoJS, this.props)
 
-  // Rotate lines and circles
-  startRotation.call(this, circles, this.props)
-  startRotation.call(this, lines, this.props)
+  if (this.props.autoplay) {
+    // Rotate lines and circles
+    startRotation.call(this, circles, this.props)
+    startRotation.call(this, lines, this.props)
+  }
 }
 
 const SottsassPattern = createDesign(sketch)
@@ -84,6 +86,7 @@ SottsassPattern.defaultProps = {
   rotationOffset: 4,
   width: 300,
   height: 300,
+  autoplay: true,
   style: { background: '#ff7eba', display: 'inline-block' }
 }
 
@@ -94,7 +97,8 @@ SottsassPattern.propTypes = {
   strokeDown: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  autoplay: PropTypes.bool
 }
 
 SottsassPattern.displayName = 'Sottsass Pattern'

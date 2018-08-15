@@ -55,6 +55,7 @@ StarFractal.defaultProps = {
   stroke: 'mistyrose',
   fill: 'pink',
   style: { display: 'inline-block' },
+  autoplay: true,
   callback: instance => {}
 }
 
@@ -66,7 +67,8 @@ StarFractal.propTypes = {
   stroke: PropTypes.string,
   fill: PropTypes.string,
   bg: PropTypes.string,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  autoplay: PropTypes.bool
 }
 
 export { StarFractal }

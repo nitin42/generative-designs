@@ -14,7 +14,7 @@ const colors = {
 function drawCircle(offset, color, instance) {
   const circles = []
 
-  for (let x = 10; x <= instance.height; x += 15) {
+  for (let x = 20; x <= instance.width; x += 15) {
     const circle = instance.makeCircle(offset, x, random(0, 10), random(0, 10))
     circle.fill = color
     circle.noStroke()
@@ -28,7 +28,7 @@ function drawCircle(offset, color, instance) {
 function drawPattern(instance, props) {
   let renderedCircles = []
 
-  for (let x = 20; x <= instance.width - 120; x += 20) {
+  for (let x = 40; x <= instance.width - 100; x += 20) {
     renderedCircles.push(drawCircle(x, colors.CIRCLE_ONE, instance))
     x += 20
 
@@ -44,9 +44,11 @@ function drawPattern(instance, props) {
 function sketch() {
   const circles = drawPattern(this.TwoJS, this.props)
 
-  circles.forEach(objects => {
-    startRotation.call(this, objects, this.props)
-  })
+  this.props.autoplay
+    ? circles.forEach(objects => {
+        startRotation.call(this, objects, this.props)
+      })
+    : null
 }
 
 const Circles = createDesign(sketch)
@@ -56,7 +58,8 @@ Circles.defaultProps = {
   scaleOffset: 0.0245,
   rotationOffset: 4,
   width: 400,
-  height: 300
+  height: 300,
+  autoplay: true
 }
 
 Circles.propTypes = {
@@ -64,7 +67,8 @@ Circles.propTypes = {
   height: PropTypes.number,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  autoplay: PropTypes.bool
 }
 
 export { Circles }
