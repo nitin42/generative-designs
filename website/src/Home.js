@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import Noty from 'noty'
 
 import { Heading } from './Heading'
 import { Footer } from './Footer'

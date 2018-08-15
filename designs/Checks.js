@@ -42,8 +42,7 @@ Checks.defaultProps = {
   stroke: '#babcc0',
   width: 300,
   height: 300,
-  style: { display: 'inline-block' },
-  autoplay: true
+  style: { display: 'inline-block' }
 }
 
 Checks.propTypes = {
@@ -52,8 +51,7 @@ Checks.propTypes = {
   stroke: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func,
-  autoplay: PropTypes.bool
+  callback: PropTypes.func
 }
 
 Checks.displayName = 'Checks'

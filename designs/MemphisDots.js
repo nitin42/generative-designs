@@ -36,8 +36,7 @@ MemphisDots.defaultProps = {
   rotationOffset: 4,
   height: 300,
   width: 300,
-  scale: 1,
-  autoplay: true
+  scale: 1
 }
 
 MemphisDots.propTypes = {
@@ -46,8 +45,7 @@ MemphisDots.propTypes = {
   fill: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func,
-  autoplay: PropTypes.bool
+  callback: PropTypes.func
 }
 
 MemphisDots.displayName = 'Memphis Dots'

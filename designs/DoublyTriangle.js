@@ -97,7 +97,6 @@ DoublyTriangle.defaultProps = {
   strokeDown: '#c6e2ff',
   width: 300,
   height: 300,
-  autoplay: true,
   style: { background: '#ff68af' }
 }
 
@@ -108,8 +107,7 @@ DoublyTriangle.propTypes = {
   strokeDown: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func,
-  autoplay: PropTypes.bool
+  callback: PropTypes.func
 }
 
 export { DoublyTriangle }

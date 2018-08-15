@@ -8,6 +8,8 @@
   "dependencies": {
     "emotion": "^9.2.6",
     "fast-memoize": "^2.5.1",
+    "memoize-one": "^4.0.0",
+    "noty": "^3.2.0-beta",
     "prop-types": "^15.6.2",
     "reac": "^0.0.0",
     "react": "^16.4.2",

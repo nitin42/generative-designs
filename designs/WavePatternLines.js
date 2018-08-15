@@ -49,7 +49,6 @@ WavyLines.defaultProps = {
   scaleOffset: 0.08,
   rotationOffset: 4,
   scale: 2.5,
-  autoplay: true,
   style: { background: '#cd6090', display: 'inline-block' },
   callback: instance => {}
 }
@@ -62,8 +61,7 @@ WavyLines.propTypes = {
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
   callback: PropTypes.func,
-  scale: PropTypes.number,
-  autoplay: PropTypes.bool
+  scale: PropTypes.number
 }
 
 WavyLines.displayName = 'WavyLines'

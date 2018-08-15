@@ -1,5 +1,6 @@
 import React from 'react'
 import Two from 'two.js'
+import { css } from 'emotion'
 
 import { flush } from '../renderer/flush'
 
@@ -32,7 +33,17 @@ export function createDesign(sketch) {
     }
 
     render() {
-      return <div id={this.props.id} style={this.props.style || {}} />
+      return (
+        <div
+          className={css`
+            -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+          `}
+          id={this.props.id}
+          style={this.props.style || {}}
+        />
+      )
     }
   }
 }

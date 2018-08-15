@@ -51,7 +51,6 @@ FriederLines.defaultProps = {
   height: 200,
   width: 200,
   scale: 2.2,
-  autoplay: true,
   style: { display: 'inline-block', background: '#ff7eba' },
   callback: ctrl => {}
 }
@@ -64,8 +63,7 @@ FriederLines.propTypes = {
   height: PropTypes.number,
   width: PropTypes.number,
   scale: PropTypes.number,
-  callback: PropTypes.func,
-  autoplay: PropTypes.bool
+  callback: PropTypes.func
 }
 
 export { FriederLines }
