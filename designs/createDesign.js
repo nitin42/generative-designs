@@ -1,6 +1,7 @@
 import React from 'react'
 import Two from 'two.js'
 import { css } from 'emotion'
+import { Link } from 'react-router-dom'
 
 import { flush } from '../renderer/flush'
 
@@ -34,15 +35,18 @@ export function createDesign(sketch) {
 
     render() {
       return (
-        <div
-          className={css`
-            -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-            -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-            box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-          `}
-          id={this.props.id}
-          style={this.props.style || {}}
-        />
+        <Link to={`/${this.props.link}`}>
+          <div
+            className={css`
+              -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+              -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+              box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+              cursor: pointer;
+            `}
+            id={this.props.id}
+            style={this.props.style || {}}
+          />
+        </Link>
       )
     }
   }

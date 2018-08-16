@@ -29,7 +29,6 @@ function drawChecks(instance, props) {
 
 function sketch() {
   const checks = drawChecks(this.TwoJS, this.props)
-
   startRotation.call(this, checks, this.props)
 }
 
@@ -37,7 +36,7 @@ const Checks = createDesign(sketch)
 
 Checks.defaultProps = {
   callback: inst => {},
-  scaleOffset: 0.14,
+  scaleOffset: 0.1,
   rotationOffset: 1.5,
   stroke: '#babcc0',
   width: 300,
@@ -49,8 +48,8 @@ Checks.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   stroke: PropTypes.string,
-  scaleOffset: PropTypes.number,
-  rotationOffset: PropTypes.number,
+  scaleOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  rotationOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   callback: PropTypes.func
 }
 

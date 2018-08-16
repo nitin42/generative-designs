@@ -14,7 +14,15 @@ import {
 import { hoc } from './hoc'
 
 export const ChecksDesign = hoc(
-  props => <Checks id="checks" width={300} height={300} callback={props.cb} />,
+  props => (
+    <Checks
+      id="checks"
+      width={300}
+      height={300}
+      callback={props.cb}
+      link="checks"
+    />
+  ),
   'Checks',
   'checksInstance'
 )

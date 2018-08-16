@@ -15,6 +15,8 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-emotion": "^9.2.6",
+    "react-responsive-modal": "^3.2.0",
+    "react-router-dom": "^4.3.1",
     "two.js": "^0.7.0-alpha.1"
   },
   "devDependencies": {
