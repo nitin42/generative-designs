@@ -31,8 +31,6 @@ const getDesignComponent = designName => props => {
   return <Design {...props} />
 }
 
-const DefaultFallback = () => <div>🌀 'Loading....'</div>
-
 const DefaultDelay = 2000
 
 const withPlaceholder = (

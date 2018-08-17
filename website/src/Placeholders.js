@@ -1,94 +1,20 @@
 import React from 'react'
 import styled, { css, keyframes } from 'react-emotion'
 
-const ChecksPlaceholder = styled('div')`
+const StyledPlaceholder = styled('div')`
   -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  width: 300;
-  height: 300;
+  width: ${props => props.width};
+  height: ${props => props.height};
   display: flex;
   justify-content: center;
   aligns-items: center;
+  background: ${props => props.bg};
 `
 
-const PolygonPlaceholder = styled('div')`
-  -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  width: 300;
-  height: 300;
-  display: flex;
-  justify-content: center;
-  aligns-items: center;
-  background: #fff1f8;
-`
-
-const SottsassPlaceholder = styled('div')`
-  -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  width: 300;
-  height: 300;
-  display: flex;
-  justify-content: center;
-  aligns-items: center;
-  background: #ff7eba;
-`
-
-const DoubleTrianglePlaceholder = styled('div')`
-  -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  width: 300;
-  height: 300;
-  display: flex;
-  justify-content: center;
-  aligns-items: center;
-  background: #ff68af;
-`
-const WaveLinesPlaceholder = styled('div')`
-  -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  width: 300;
-  height: 300;
-  display: flex;
-  justify-content: center;
-  aligns-items: center;
-  background: #cd6090;
-`
-const FriederLinesPlaceholder = styled('div')`
-  -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  width: 300;
-  height: 300;
-  display: flex;
-  justify-content: center;
-  aligns-items: center;
-  background: #ff7eba;
-`
-const MemphisDotPlaceholder = styled('div')`
-	-webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-	box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-	width: 300;
-	height: 300;
-	display: flex;
-	justify-content: center;
-	aligns-items: center;
-	background: #ff7eba';
-`
-
-// Shamelessly copied from http://tobiasahlin.com/spinkit/
+// Copied from http://tobiasahlin.com/spinkit/
 
 const skRotate = keyframes`
 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }
@@ -115,7 +41,7 @@ const Spinner = styled('div')`
   animation: ${skRotate} 2s infinite linear;
 `
 
-const Dot1 = styled('div')`
+const DotOne = styled('div')`
   width: 60%;
   height: 60%;
   display: inline-block;
@@ -128,16 +54,14 @@ const Dot1 = styled('div')`
   animation: ${skBounce}2s infinite ease-in-out;
 `
 
-const Dot2 = styled('div')`
+const DotTwo = styled('div')`
   width: 60%;
   height: 60%;
   display: inline-block;
   position: absolute;
   top: 0;
-
   background-color: ${props => props.color};
   border-radius: 100%;
-
   -webkit-animation: ${skBounce} 2s infinite ease-in-out;
   animation: ${skBounce} 2s infinite ease-in-out;
   top: auto;
@@ -146,65 +70,32 @@ const Dot2 = styled('div')`
   animation-delay: -1s;
 `
 
-export const ChecksDesignPlaceholder = color => (
-  <ChecksPlaceholder>
+const createPlaceholder = (bg, loaderColor) => (
+  <StyledPlaceholder bg={bg || '#fff'} width={300} height={300}>
     <Spinner>
-      <Dot1 color={color} />
-      <Dot2 color={color} />
+      <DotOne color={loaderColor} />
+      <DotTwo color={loaderColor} />
     </Spinner>
-  </ChecksPlaceholder>
+  </StyledPlaceholder>
 )
 
-export const PolygonDesignPlaceholder = color => (
-  <PolygonPlaceholder>
-    <Spinner>
-      <Dot1 color={color} />
-      <Dot2 color={color} />
-    </Spinner>
-  </PolygonPlaceholder>
-)
+export const ChecksDesignPlaceholder = loaderColor =>
+  createPlaceholder(undefined, loaderColor)
 
-export const SottsassDesignPlaceholder = color => (
-  <SottsassPlaceholder>
-    <Spinner>
-      <Dot1 color={color} />
-      <Dot2 color={color} />
-    </Spinner>
-  </SottsassPlaceholder>
-)
+export const PolygonDesignPlaceholder = loaderColor =>
+  createPlaceholder('#fff1f8', loaderColor)
 
-export const DTDesignPlaceholder = color => (
-  <DoubleTrianglePlaceholder>
-    <Spinner>
-      <Dot1 color={color} />
-      <Dot2 color={color} />
-    </Spinner>
-  </DoubleTrianglePlaceholder>
-)
+export const SottsassDesignPlaceholder = loaderColor =>
+  createPlaceholder('#ff7eba', loaderColor)
 
-export const WaveLinesDesignPlaceholder = color => (
-  <WaveLinesPlaceholder>
-    <Spinner>
-      <Dot1 color={color} />
-      <Dot2 color={color} />
-    </Spinner>
-  </WaveLinesPlaceholder>
-)
+export const DTDesignPlaceholder = loaderColor =>
+  createPlaceholder('#ff68af', loaderColor)
 
-export const FriederLinesDesignPlaceholder = color => (
-  <FriederLinesPlaceholder>
-    <Spinner>
-      <Dot1 color={color} />
-      <Dot2 color={color} />
-    </Spinner>
-  </FriederLinesPlaceholder>
-)
+export const WaveLinesDesignPlaceholder = loaderColor =>
+  createPlaceholder('#cd6090', loaderColor)
 
-export const MemphisDesignPlaceholder = color => (
-  <MemphisDotPlaceholder>
-    <Spinner>
-      <Dot1 color={color} />
-      <Dot2 color={color} />
-    </Spinner>
-  </MemphisDotPlaceholder>
-)
+export const FriederLinesDesignPlaceholder = loaderColor =>
+  createPlaceholder('#ff7eba', loaderColor)
+
+export const MemphisDesignPlaceholder = loaderColor =>
+  createPlaceholder('#ff7eba', loaderColor)
