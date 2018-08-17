@@ -1,6 +1,15 @@
 import React from 'react'
 import styled, { css, keyframes } from 'react-emotion'
 
+const PLACEHOLDER_BACKGROUND = {
+  POLYGON: '#fff1f8',
+  SOTTSASS: '#ff7eba',
+  DTDESIGN: '#ff68af',
+  WAVES: '#cd6090',
+  FRIEDER: '#ff7eba',
+  MEMPHIS: '#ff7eba'
+}
+
 const StyledPlaceholder = styled('div')`
   -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
@@ -83,19 +92,19 @@ export const ChecksDesignPlaceholder = loaderColor =>
   createPlaceholder(undefined, loaderColor)
 
 export const PolygonDesignPlaceholder = loaderColor =>
-  createPlaceholder('#fff1f8', loaderColor)
+  createPlaceholder(PLACEHOLDER_BACKGROUND.POLYGON, loaderColor)
 
 export const SottsassDesignPlaceholder = loaderColor =>
-  createPlaceholder('#ff7eba', loaderColor)
+  createPlaceholder(PLACEHOLDER_BACKGROUND.SOTTSASS, loaderColor)
 
 export const DTDesignPlaceholder = loaderColor =>
-  createPlaceholder('#ff68af', loaderColor)
+  createPlaceholder(PLACEHOLDER_BACKGROUND.DTDESIGN, loaderColor)
 
 export const WaveLinesDesignPlaceholder = loaderColor =>
-  createPlaceholder('#cd6090', loaderColor)
+  createPlaceholder(PLACEHOLDER_BACKGROUND.WAVES, loaderColor)
 
 export const FriederLinesDesignPlaceholder = loaderColor =>
-  createPlaceholder('#ff7eba', loaderColor)
+  createPlaceholder(PLACEHOLDER_BACKGROUND.FRIEDER, loaderColor)
 
 export const MemphisDesignPlaceholder = loaderColor =>
-  createPlaceholder('#ff7eba', loaderColor)
+  createPlaceholder(PLACEHOLDER_BACKGROUND.MEMPHIS, loaderColor)
