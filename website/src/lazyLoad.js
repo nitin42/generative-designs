@@ -11,6 +11,17 @@ import {
   SottsassDesignPlaceholder
 } from './Placeholders'
 
+const LOADER_COLOR = {
+  MEMPHIS: '#ffe5f1',
+  CHECKSL: '#babcc0',
+  POLYGON: '#e5d8df',
+  FRIEDER: '#ffd8ea',
+  TRIANGLE: '#7f3457',
+  WAVES: '#e6afc7',
+  SOTTSASS: '#e6afc7',
+  CIRCLES: '#ff7f7f'
+}
+
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const cache = createCache()
@@ -54,41 +65,41 @@ export const StarFractal = withPlaceholder(
 )
 export const ChecksDesign = withPlaceholder(
   DefaultDelay,
-  ChecksDesignPlaceholder('#babcc0'),
+  ChecksDesignPlaceholder(LOADER_COLOR.CHECKS),
   getDesignComponent('ChecksDesign')
 )
 export const PolygonDesign = withPlaceholder(
   DefaultDelay,
-  PolygonDesignPlaceholder('#e5d8df'),
+  PolygonDesignPlaceholder(LOADER_COLOR.POLYGON),
   getDesignComponent('PolygonDesign')
 )
 export const FriederLines = withPlaceholder(
   DefaultDelay,
-  FriederLinesDesignPlaceholder('#ffd8ea'),
+  FriederLinesDesignPlaceholder(LOADER_COLOR.FRIEDER),
   getDesignComponent('FriederLinesDesign')
 )
 export const WavyLines = withPlaceholder(
   DefaultDelay,
-  WaveLinesDesignPlaceholder('#e6afc7'),
+  WaveLinesDesignPlaceholder(LOADER_COLOR.WAVES),
   getDesignComponent('WaveLinesDesign')
 )
 export const Circles = withPlaceholder(
   DefaultDelay,
-  ChecksDesignPlaceholder('#ff7f7f'),
+  ChecksDesignPlaceholder(LOADER_COLOR.CIRCLES),
   getDesignComponent('CirclesDesign')
 )
 export const DoublyTriangle = withPlaceholder(
   DefaultDelay,
-  DTDesignPlaceholder('#7f3457'),
+  DTDesignPlaceholder(LOADER_COLOR.TRIANGLE),
   getDesignComponent('DoubleTriangleDesign')
 )
 export const MemphisDots = withPlaceholder(
   DefaultDelay,
-  MemphisDesignPlaceholder('#ffe5f1'),
+  MemphisDesignPlaceholder(LOADER_COLOR.MEMPHIS),
   getDesignComponent('MemphisDesign')
 )
 export const SottsassPattern = withPlaceholder(
   DefaultDelay,
-  SottsassDesignPlaceholder('#e6afc7'),
+  SottsassDesignPlaceholder(LOADER_COLOR.SOTTSASS),
   getDesignComponent('SottsassDesign')
 )
