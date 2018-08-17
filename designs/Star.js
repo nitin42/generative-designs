@@ -55,7 +55,8 @@ StarFractal.defaultProps = {
   stroke: 'mistyrose',
   fill: 'pink',
   style: { display: 'inline-block' },
-  callback: instance => {}
+  callback: instance => {},
+  link: 'star'
 }
 
 StarFractal.propTypes = {

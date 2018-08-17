@@ -48,6 +48,7 @@ WavyLines.defaultProps = {
   strokeDown: 'pink',
   scaleOffset: 0.08,
   rotationOffset: 4,
+  link: 'waves',
   scale: 2.5,
   style: { background: '#cd6090', display: 'inline-block' },
   callback: instance => {}

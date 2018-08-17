@@ -55,7 +55,7 @@ function drawEvenHex(instance, len, y) {
 function drawPolygon(instance, props) {
   let renderedHex = []
 
-  for (let x = 30; x <= 400; x += 40) {
+  for (let x = 30; x <= instance.height; x += 40) {
     renderedHex.push(drawOddHex(instance, 20, x))
     x += 40
     renderedHex.push(drawEvenHex(instance, 45, x))
@@ -77,6 +77,7 @@ AbstractPoly.defaultProps = {
   scaleOffset: 0.0245,
   rotationOffset: 4,
   width: 480,
+  link: 'polygon',
   height: 430,
   style: { background: '#fff1f8', display: 'inline-block' }
 }

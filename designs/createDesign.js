@@ -37,12 +37,16 @@ export function createDesign(sketch) {
       return (
         <Link to={`/${this.props.link}`}>
           <div
-            className={css`
-              -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-              -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-              box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-              cursor: pointer;
-            `}
+            className={
+              this.props.className +
+              ' ' +
+              css`
+                -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+                box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+              `
+            }
             id={this.props.id}
             style={this.props.style || {}}
           />

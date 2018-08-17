@@ -41,6 +41,7 @@ Checks.defaultProps = {
   stroke: '#babcc0',
   width: 300,
   height: 300,
+  link: 'checks',
   style: { display: 'inline-block' }
 }
 

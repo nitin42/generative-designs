@@ -14,17 +14,11 @@ import {
 import { hoc } from './hoc'
 
 export const ChecksDesign = hoc(props => (
-  <Checks
-    id="checks"
-    width={300}
-    height={300}
-    callback={props.cb}
-    link="checks"
-  />
+  <Checks id="checks" width={300} height={300} callback={props.cb} />
 ))
 
 export const CirclesDesign = hoc(props => (
-  <Circles id="circles" width={380} height={300} callback={props.cb} />
+  <Circles id="circles" width={300} height={300} callback={props.cb} />
 ))
 
 export const PolygonDesign = hoc(props => (

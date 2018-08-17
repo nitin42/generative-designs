@@ -83,6 +83,7 @@ SottsassPattern.defaultProps = {
   scaleOffset: 0.02,
   rotationOffset: 4,
   width: 300,
+  link: 'sottsass',
   height: 300,
   style: { background: '#ff7eba', display: 'inline-block' }
 }

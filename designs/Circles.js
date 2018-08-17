@@ -28,7 +28,7 @@ function drawCircle(offset, color, instance) {
 function drawPattern(instance, props) {
   let renderedCircles = []
 
-  for (let x = 10; x <= instance.width - 100; x += 20) {
+  for (let x = 10; x <= instance.width; x += 20) {
     renderedCircles.push(drawCircle(x, colors.CIRCLE_ONE, instance))
     x += 20
 
@@ -56,7 +56,8 @@ Circles.defaultProps = {
   scaleOffset: 0.0245,
   rotationOffset: 4,
   width: 400,
-  height: 300
+  height: 300,
+  link: 'circles'
 }
 
 Circles.propTypes = {

@@ -17,6 +17,9 @@ export class ChecksDetails extends React.Component {
           callback={instance => this.setState({ instance })}
           rotationOffset={this.state.rotationOffset}
           scaleOffset={this.state.scaleOffset}
+          width={500}
+          height={500}
+          className="animated zoomIn"
         />
         <Player instance={this.state.instance} />
         Scale offset:{' '}
