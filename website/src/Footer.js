@@ -4,7 +4,7 @@ import styled from 'react-emotion'
 const StyledFooter = styled('footer')`
   display: flex;
   justify-content: center;
-  font-size: 12px;
+  font-size: 20px;
 `
 
 const StyledLink = styled('a')`

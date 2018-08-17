@@ -13,7 +13,7 @@ import {
 
 const LOADER_COLOR = {
   MEMPHIS: '#ffe5f1',
-  CHECKSL: '#babcc0',
+  CHECKS: '#babcc0',
   POLYGON: '#e5d8df',
   FRIEDER: '#ffd8ea',
   TRIANGLE: '#7f3457',
@@ -42,7 +42,7 @@ const getDesignComponent = designName => props => {
   return <Design {...props} />
 }
 
-const DefaultDelay = 2000
+const DefaultDelay = 500
 
 const withPlaceholder = (
   delay,
