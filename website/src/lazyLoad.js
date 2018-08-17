@@ -1,6 +1,16 @@
 import React from 'react'
 import { createCache, createResource } from 'simple-cache-provider'
 
+import {
+  ChecksDesignPlaceholder,
+  PolygonDesignPlaceholder,
+  MemphisDesignPlaceholder,
+  FriederLinesDesignPlaceholder,
+  DTDesignPlaceholder,
+  WaveLinesDesignPlaceholder,
+  SottsassDesignPlaceholder
+} from './Placeholders'
+
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const cache = createCache()
@@ -23,7 +33,7 @@ const getDesignComponent = designName => props => {
 
 const DefaultFallback = () => <div>🌀 'Loading....'</div>
 
-const DefaultDelay = 5000
+const DefaultDelay = 2000
 
 const withPlaceholder = (
   delay,
@@ -37,7 +47,7 @@ const withPlaceholder = (
 
 export const StarFractal = withPlaceholder(
   DefaultDelay,
-  DefaultFallback,
+  ChecksDesignPlaceholder('mistyrose'),
   props => {
     const Fractal = createFractalResource.read(cache, props)
 
@@ -46,41 +56,41 @@ export const StarFractal = withPlaceholder(
 )
 export const ChecksDesign = withPlaceholder(
   DefaultDelay,
-  DefaultFallback(),
+  ChecksDesignPlaceholder('#babcc0'),
   getDesignComponent('ChecksDesign')
 )
 export const PolygonDesign = withPlaceholder(
   DefaultDelay,
-  DefaultFallback(),
+  PolygonDesignPlaceholder('#e5d8df'),
   getDesignComponent('PolygonDesign')
 )
 export const FriederLines = withPlaceholder(
   DefaultDelay,
-  DefaultFallback(),
+  FriederLinesDesignPlaceholder('#ffd8ea'),
   getDesignComponent('FriederLinesDesign')
 )
 export const WavyLines = withPlaceholder(
   DefaultDelay,
-  DefaultFallback(),
+  WaveLinesDesignPlaceholder('#e6afc7'),
   getDesignComponent('WaveLinesDesign')
 )
 export const Circles = withPlaceholder(
   DefaultDelay,
-  DefaultFallback(),
+  ChecksDesignPlaceholder('#ff7f7f'),
   getDesignComponent('CirclesDesign')
 )
 export const DoublyTriangle = withPlaceholder(
   DefaultDelay,
-  DefaultFallback(),
+  DTDesignPlaceholder('#7f3457'),
   getDesignComponent('DoubleTriangleDesign')
 )
 export const MemphisDots = withPlaceholder(
   DefaultDelay,
-  DefaultFallback(),
+  MemphisDesignPlaceholder('#ffe5f1'),
   getDesignComponent('MemphisDesign')
 )
 export const SottsassPattern = withPlaceholder(
   DefaultDelay,
-  DefaultFallback(),
+  SottsassDesignPlaceholder('#e6afc7'),
   getDesignComponent('SottsassDesign')
 )

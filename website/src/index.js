@@ -14,6 +14,8 @@ injectGlobal`
   i {
     cursor: pointer;
   }
+
+
 `
 
 const App = () => (
