@@ -10,6 +10,10 @@ injectGlobal`
   body {
     color: #4f4f4f;
   }
+
+  i {
+    cursor: pointer;
+  }
 `
 
 const App = () => (

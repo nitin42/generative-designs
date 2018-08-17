@@ -7,20 +7,16 @@
   "license": "MIT",
   "dependencies": {
     "emotion": "^9.2.6",
-    "fast-memoize": "^2.5.1",
-    "memoize-one": "^4.0.0",
-    "noty": "^3.2.0-beta",
     "prop-types": "^15.6.2",
-    "reac": "^0.0.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
     "react-emotion": "^9.2.6",
     "react-responsive-modal": "^3.2.0",
     "react-router-dom": "^4.3.1",
+    "simple-cache-provider": "^0.7.0",
     "two.js": "^0.7.0-alpha.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-react-app": "^3.1.2",
     "husky": "^1.0.0-rc.13",
@@ -41,5 +37,9 @@
       "./node_modules/.bin/prettier --write --no-semi --single-quote",
       "git add"
     ]
+  },
+  "alias": {
+    "react": "./vendor/react.development.js",
+    "react-dom": "./vendor/react-dom.development.js"
   }
 }

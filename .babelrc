@@ -3,6 +3,7 @@
     "react-app"
   ],
   "plugins": [
-    "transform-class-properties"
+    "transform-class-properties",
+    "syntax-dynamic-import"
   ]
 }

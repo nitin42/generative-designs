@@ -25,23 +25,13 @@ export class Player extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <Icon>
-          {this.state.playing ? (
-            <i
-              className={'fas fa-pause'}
-              style={{ cursor: 'pointer' }}
-              onClick={this.handlePause}
-            />
-          ) : (
-            <i
-              className={'fas fa-play'}
-              style={{ cursor: 'pointer' }}
-              onClick={this.handlePlay}
-            />
-          )}
-        </Icon>
-      </React.Fragment>
+      <Icon>
+        {this.state.playing ? (
+          <i className="fas fa-pause" onClick={this.handlePause} />
+        ) : (
+          <i className="fas fa-play" onClick={this.handlePlay} />
+        )}
+      </Icon>
     )
   }
 }
