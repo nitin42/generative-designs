@@ -5,14 +5,17 @@ import { StarFractal } from '../../../src'
 import { DetailContainer } from './DetailContainer'
 
 import { ErrorBoundary } from '../components/ErrorBoundary'
-import { Info } from '../components/Info'
+import { Info as InfoModal } from '../components/Info'
 
 import { ColorPicker } from '../primitives/ColorPicker'
 import { RangeSlider } from '../primitives/Slider'
 import { Button } from '../primitives/Button'
+import { ShadownCanvas } from '../primitives/Canvas'
 
 import { downloadDesign } from '../utils/downloadDesign'
+import { DownloadButton } from '../../primitives/DownloadButton'
 
+// This is required because radius offsets can overload the stack size because generating a design involves recursive computations
 const FallbackUI = () => (
   <React.Fragment>
     <p
@@ -31,6 +34,32 @@ const FallbackUI = () => (
     </p>
     <Button onClick={e => window.location.reload(true)}>Reload design</Button>
   </React.Fragment>
+)
+
+const Info = props => (
+  <div
+    className={css`
+      padding: 10px;
+      font-size: 1.2em;
+      width: 350px;
+      line-height: 1.5;
+      text-align: justify;
+    `}
+  >
+    <h1>Star Fractal</h1>
+    <p>
+      A fractal is a geometric shape that can be split into parts, each of which
+      is self-similar. This fractal uses recursion and star shape to construct a
+      stochastic fractal, which means it is built on probability and randomness.
+    </p>
+    <p>
+      You can generate different designs of this fractal by changing the
+      parameters like <b>length</b>, <b>sides</b>, and <b>radius offsets.</b>
+    </p>
+    <p>
+      Try changing any of the parameters and see how it transforms the fractal.
+    </p>
+  </div>
 )
 
 export class StarFractalDetails extends React.Component {
@@ -82,34 +111,9 @@ export class StarFractalDetails extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Info>
-          <div
-            className={css`
-              padding: 10px;
-              font-size: 1.2em;
-              width: 350px;
-              line-height: 1.5;
-              text-align: justify;
-            `}
-          >
-            <h1>Star Fractal</h1>
-            <p>
-              A fractal is a geometric shape that can be split into parts, each
-              of which is self-similar. This fractal uses recursion and star
-              shape to construct a stochastic fractal, which means it is built
-              on probability and randomness.
-            </p>
-            <p>
-              You can generate different designs of this fractal by changing the
-              parameters like <b>length</b>, <b>sides</b>, and{' '}
-              <b>radius offsets.</b>
-            </p>
-            <p>
-              Try changing any of the parameters and see how it transforms the
-              fractal.
-            </p>
-          </div>
-        </Info>
+        <InfoModal>
+          <Info />
+        </InfoModal>
         <DetailContainer>
           <ErrorBoundary fallbackUI={<FallbackUI />}>
             <StarFractal
@@ -180,20 +184,11 @@ export class StarFractalDetails extends React.Component {
                 />
               </li>
             </ul>
-            <canvas
-              id="fractal-canvas"
-              width="1000px"
-              height="600px"
-              style={{ display: 'none' }}
+            <ShadownCanvas id="fractal-canvas" />
+            <DownloadButton
+              designName="Star_Fractal_Design.png"
+              canvasId="fractal-canvas"
             />
-            <a id="download-design" download="Star_Fractal_Design.png">
-              <Button
-                type="button"
-                onClick={e => downloadDesign('fractal-canvas')}
-              >
-                Download design
-              </Button>
-            </a>
           </ErrorBoundary>
         </DetailContainer>
       </React.Fragment>
