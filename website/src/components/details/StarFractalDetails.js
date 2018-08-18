@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from 'emotion'
 
 import { StarFractal } from '../../../src'
+
 import { DetailContainer } from './DetailContainer'
 
 import { ErrorBoundary } from '../components/ErrorBoundary'
@@ -12,7 +13,6 @@ import { RangeSlider } from '../primitives/Slider'
 import { Button } from '../primitives/Button'
 import { ShadownCanvas } from '../primitives/Canvas'
 
-import { downloadDesign } from '../utils/downloadDesign'
 import { DownloadButton } from '../../primitives/DownloadButton'
 
 // This is required because radius offsets can overload the stack size because generating a design involves recursive computations
