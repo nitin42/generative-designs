@@ -13,23 +13,21 @@ export class Player extends React.Component {
     playing: this.props.instance && this.props.instance.playing
   }
 
-  handlePlay = e => {
+  handlePlayer = action => {
     this.setState(state => ({ playing: !state.playing }))
-    this.props.instance.play()
-  }
-
-  handlePause = e => {
-    this.setState(state => ({ playing: !state.playing }))
-    this.props.instance.pause()
+    this.props.instance[action]()
   }
 
   render() {
     return (
       <Icon>
         {this.state.playing ? (
-          <i className="fas fa-pause" onClick={this.handlePause} />
+          <i
+            className="fas fa-pause"
+            onClick={e => this.handlePlayer('pause')}
+          />
         ) : (
-          <i className="fas fa-play" onClick={this.handlePlay} />
+          <i className="fas fa-play" onClick={e => this.handlePlayer('play')} />
         )}
       </Icon>
     )

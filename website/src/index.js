@@ -4,6 +4,7 @@ import { injectGlobal } from 'react-emotion'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import { Home } from './Home'
+
 import { ChecksDetails } from './details/ChecksDetails'
 import { StarFractalDetails } from './details/StarFractalDetails'
 import { WavesDetails } from './details/WavesDetails'

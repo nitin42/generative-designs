@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css, keyframes } from 'react-emotion'
+import styled, { keyframes } from 'react-emotion'
 
 const PLACEHOLDER_BACKGROUND = {
   POLYGON: '#fff1f8',

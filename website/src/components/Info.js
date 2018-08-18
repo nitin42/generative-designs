@@ -5,9 +5,7 @@ import Modal from 'react-responsive-modal'
 export class Info extends React.Component {
   state = { open: false }
 
-  openModal = e => this.setState({ open: true })
-
-  closeModal = e => this.setState({ open: false })
+  toggleModal = e => this.setState(state => ({ open: !state.open }))
 
   render() {
     return (
@@ -18,11 +16,11 @@ export class Info extends React.Component {
             margin-top: -10px;
             cursor: pointer;
           `}
-          onClick={this.openModal}
+          onClick={this.toggleModal}
         >
           <i className="fas fa-info-circle" />
         </div>
-        <Modal open={this.state.open} onClose={this.closeModal}>
+        <Modal open={this.state.open} onClose={this.toggleModal}>
           {this.props.children}
         </Modal>
       </React.Fragment>
