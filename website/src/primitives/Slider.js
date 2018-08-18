@@ -6,7 +6,8 @@ export const RangeSlider = props => (
     min={props.min}
     max={props.max}
     value={props.value}
-    onChange={props.onChange}
+    name={props.name}
+    onChange={e => props.onChange(e, props.name)}
     className="slider"
   />
 )

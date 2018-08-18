@@ -74,39 +74,14 @@ export class StarFractalDetails extends React.Component {
     showStrokeColorPicker: false
   }
 
-  changeLength = e => {
-    const length = parseInt(e.target.value)
-    this.setState({ length })
-  }
+  updateState = (e, prop) => this.setState({ [prop]: parseInt(e.target.value) })
 
-  changeSides = e => {
-    const sides = parseInt(e.target.value)
-    this.setState({ sides })
-  }
-
-  changeOuterRadius = e => {
-    const outerRadiusOffset = parseInt(e.target.value)
-    this.setState({ outerRadiusOffset })
-  }
-
-  changeInnerRadius = e => {
-    const innerRadiusOffset = parseInt(e.target.value)
-    this.setState({ innerRadiusOffset })
-  }
-
-  toggleFillColorPicker = e =>
+  toggleColorPicker = type =>
     this.setState(state => ({
-      showFillColorPicker: !state.showFillColorPicker
+      [type]: !state[type]
     }))
 
-  toggleStrokeColorPicker = e =>
-    this.setState(state => ({
-      showStrokeColorPicker: !state.showStrokeColorPicker
-    }))
-
-  changeFillColor = color => this.setState({ fill: color.hex })
-
-  changeStrokeColor = color => this.setState({ stroke: color.hex })
+  updateColor = (color, type) => this.setState({ [type]: color.hex })
 
   render() {
     return (
@@ -132,19 +107,21 @@ export class StarFractalDetails extends React.Component {
               <li>
                 Length:{' '}
                 <RangeSlider
+                  name="length"
                   min="1"
                   max="250"
                   value={this.state.length}
-                  onChange={this.changeLength}
+                  onChange={this.updateState}
                 />
               </li>
               <li>
                 Sides: &nbsp;&nbsp;&nbsp;
                 <RangeSlider
+                  name="sides"
                   min="1"
                   max="30"
                   value={this.state.sides}
-                  onChange={this.changeSides}
+                  onChange={this.updateState}
                 />
               </li>
               <li>
@@ -152,8 +129,8 @@ export class StarFractalDetails extends React.Component {
                   name="Fill:"
                   color={this.state.fill}
                   show={this.state.showFillColorPicker}
-                  clickHandler={this.toggleFillColorPicker}
-                  handleColorChange={this.changeFillColor}
+                  clickHandler={this.toggleColorPicker}
+                  handleColorChange={this.updateColor}
                 />
               </li>
               <li>
@@ -161,26 +138,28 @@ export class StarFractalDetails extends React.Component {
                   name="Stroke:"
                   color={this.state.stroke}
                   show={this.state.showStrokeColorPicker}
-                  clickHandler={this.toggleStrokeColorPicker}
-                  handleColorChange={this.changeStrokeColor}
+                  clickHandler={this.toggleColorPicker}
+                  handleColorChange={this.updateColor}
                 />
               </li>
               <li>
                 Inner radius offset:{' '}
                 <RangeSlider
+                  name="innerRadiusOffset"
                   min="2"
                   max="10"
                   value={this.state.innerRadiusOffset}
-                  onChange={this.changeInnerRadius}
+                  onChange={this.updateState}
                 />
               </li>
               <li>
                 Outer radius offset:{' '}
                 <RangeSlider
+                  name="outerRadiusOffset"
                   min="2"
                   max="10"
                   value={this.state.outerRadiusOffset}
-                  onChange={this.changeOuterRadius}
+                  onChange={this.updateState}
                 />
               </li>
             </ul>
