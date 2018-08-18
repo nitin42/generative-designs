@@ -9,7 +9,7 @@ import {
   DTDesignPlaceholder,
   WaveLinesDesignPlaceholder,
   SottsassDesignPlaceholder
-} from './Placeholders'
+} from './components/Placeholders'
 
 const LOADER_COLOR = {
   MEMPHIS: '#ffe5f1',

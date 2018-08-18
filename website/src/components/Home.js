@@ -15,7 +15,7 @@ import {
   MemphisDots,
   DoublyTriangle,
   SottsassPattern
-} from './lazyLoad'
+} from '../lazyLoad'
 
 const Catalogue = styled('div')`
   display: grid;

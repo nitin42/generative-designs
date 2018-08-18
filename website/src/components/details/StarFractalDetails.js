@@ -4,10 +4,14 @@ import { css } from 'emotion'
 import { StarFractal } from '../../../src'
 import { DetailContainer } from './DetailContainer'
 
-import { ErrorBoundary } from '../ErrorBoundary'
-import { ColorPicker } from '../ColorPicker'
-import { RangeSlider } from '../Slider'
-import { Info } from '../Info'
+import { ErrorBoundary } from '../components/ErrorBoundary'
+import { Info } from '../components/Info'
+
+import { ColorPicker } from '../primitives/ColorPicker'
+import { RangeSlider } from '../primitives/Slider'
+import { Button } from '../primitives/Button'
+
+import { downloadDesign } from '../utils/downloadDesign'
 
 const FallbackUI = () => (
   <React.Fragment>
@@ -25,22 +29,7 @@ const FallbackUI = () => (
       exceeding the call stack size limit. In order to avoid such scenarios,
       updates to the design are not applied. Reload the design to start again!
     </p>
-    <button
-      className={css`
-        color: #4f4f4f;
-        border: 1px solid #4f4f4f;
-        padding: 10px;
-        border-radius: 4px;
-
-        &:hover {
-          background: #4f4f4f;
-          color: white;
-        }
-      `}
-      onClick={e => window.location.reload(true)}
-    >
-      Reload design
-    </button>
+    <Button onClick={e => window.location.reload(true)}>Reload design</Button>
   </React.Fragment>
 )
 
@@ -89,26 +78,6 @@ export class StarFractalDetails extends React.Component {
   changeFillColor = color => this.setState({ fill: color.hex })
 
   changeStrokeColor = color => this.setState({ stroke: color.hex })
-
-  // Click handler to download the edited design
-  downloadDesign = e => {
-    // Serialize the svg to a string and draw it as image on the canvas.
-    window.canvg(
-      'fractal-canvas',
-      new XMLSerializer().serializeToString(document.querySelector('svg'))
-    )
-
-    const download = document.getElementById('download-design')
-
-    // Get the data url of the image drawn on the canvas and replace it with octet stream so that the image binary can be downloaded
-    const image = document
-      .getElementById('fractal-canvas')
-      .toDataURL('image/png')
-      .replace('image/png', 'image/octet-stream')
-
-    // Set the image link
-    download.setAttribute('href', image)
-  }
 
   render() {
     return (
@@ -218,23 +187,12 @@ export class StarFractalDetails extends React.Component {
               style={{ display: 'none' }}
             />
             <a id="download-design" download="Star_Fractal_Design.png">
-              <button
-                className={css`
-                  color: #4f4f4f;
-                  border: 1px solid #4f4f4f;
-                  padding: 10px;
-                  border-radius: 4px;
-
-                  &:hover {
-                    background: #4f4f4f;
-                    color: white;
-                  }
-                `}
+              <Button
                 type="button"
-                onClick={this.downloadDesign}
+                onClick={e => downloadDesign('fractal-canvas')}
               >
                 Download design
-              </button>
+              </Button>
             </a>
           </ErrorBoundary>
         </DetailContainer>
