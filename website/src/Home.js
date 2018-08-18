@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled, { css } from 'react-emotion'
 
 import { Heading } from './Heading'
 import { Footer } from './Footer'
@@ -27,7 +27,31 @@ const Catalogue = styled('div')`
 
 export const Home = props => (
   <React.Fragment>
-    <Info />
+    <Info>
+      <div
+        className={css`
+          padding: 10px;
+          font-size: 1.2em;
+          width: 350px;
+          line-height: 1.5;
+        `}
+      >
+        <p>Hello 👋</p>
+        <p>
+          You will find a collection of generative designs on the home page.
+          Interact with a design by clicking on the play icon. Clicking on the
+          play icon will start the animation.
+        </p>
+        <h3>Parameterization</h3>
+        <p>
+          To be able to create a bridge between transformation and
+          visualization, you can click on a design to pop-up a details page. On
+          the details page, you will find a list of controls to change the
+          parameters of a design. Use of parameters defines a system of
+          visualization and simulation.
+        </p>
+      </div>
+    </Info>
     <Heading />
     <Catalogue>
       <StarFractal

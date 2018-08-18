@@ -2125,6 +2125,10 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
+get-canvas-context@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/get-canvas-context/-/get-canvas-context-1.0.2.tgz#d6e7b50bc4e4c86357cd39f22647a84b73601e93"
+
 get-own-enumerable-property-symbols@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-2.0.1.tgz#5c4ad87f2834c4b9b4e84549dc1e0650fb38c24b"
@@ -2831,6 +2835,10 @@ listr@^0.14.1:
     p-map "^1.1.1"
     rxjs "^6.1.0"
     strip-ansi "^3.0.1"
+
+load-img@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/load-img/-/load-img-1.0.0.tgz#09537449893c32a8709074645566c4c5faa9ac26"
 
 locate-path@^3.0.0:
   version "3.0.0"
@@ -4816,6 +4824,12 @@ supports-color@^5.3.0, supports-color@^5.4.0:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.4.0.tgz#1c6b337402c2137605efe19f10fec390f6faab54"
   dependencies:
     has-flag "^3.0.0"
+
+svg-to-image@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/svg-to-image/-/svg-to-image-1.1.3.tgz#d6ff4d883ca8f7e3f792b42b2328b15cbe2fb0f3"
+  dependencies:
+    load-img "^1.0.0"
 
 svgo@^0.7.0:
   version "0.7.2"
