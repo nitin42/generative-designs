@@ -9,7 +9,7 @@ const Title = styled('h1')`
 export const Heading = props => (
   <div style={{ margin: '20px' }}>
     <Title>Generative Design</Title>
-    <p style={{ fontSize: '1.5em' }}>
+    <p style={{ fontSize: '1.6em' }}>
       A collection of interactive generative designs.
     </p>
   </div>

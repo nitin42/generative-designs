@@ -20,7 +20,7 @@ import {
 const Catalogue = styled('div')`
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
-  grid-gap: 40px;
+  grid-gap: 20px;
   padding: 40px;
   margin-left: 40px;
 `

@@ -8,9 +8,13 @@
   "dependencies": {
     "emotion": "^9.2.6",
     "prop-types": "^15.6.2",
+    "react": ">=0.14",
+    "react-color": "^2.14.1",
+    "react-dom": ">=0.14",
     "react-emotion": "^9.2.6",
     "react-responsive-modal": "^3.2.0",
     "react-router-dom": "^4.3.1",
+    "react-tooltip": "^3.6.1",
     "simple-cache-provider": "^0.7.0",
     "two.js": "^0.7.0-alpha.1"
   },

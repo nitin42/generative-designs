@@ -3,17 +3,45 @@ import PropTypes from 'prop-types'
 import { createDesign } from './createDesign'
 
 // This is required for generating different stars
-function createSubStars(instance, x, y, radius, sides) {
+function createSubStars(instance, x, y, radius, sides, props) {
   const star = instance.makeStar(x, y, radius, radius - 30, sides)
 
-  star.fill = 'pink'
-  star.stroke = 'mistyrose'
+  star.fill = props.fill
+  star.stroke = props.stroke
 
   if (radius > 12) {
-    createSubStars(instance, x + radius / 2, y, radius / 2, sides)
-    createSubStars(instance, x - radius / 2, y, radius / 2, sides)
-    createSubStars(instance, x, y + radius / 2, radius / 2, sides)
-    createSubStars(instance, x, y - radius / 2, radius / 2, sides)
+    createSubStars(
+      instance,
+      x + radius / props.innerRadiusOffset,
+      y,
+      radius / props.innerRadiusOffset,
+      sides,
+      props
+    )
+    createSubStars(
+      instance,
+      x - radius / props.innerRadiusOffset,
+      y,
+      radius / props.innerRadiusOffset,
+      sides,
+      props
+    )
+    createSubStars(
+      instance,
+      x,
+      y + radius / props.innerRadiusOffset,
+      radius / props.innerRadiusOffset,
+      sides,
+      props
+    )
+    createSubStars(
+      instance,
+      x,
+      y - radius / props.innerRadiusOffset,
+      radius / props.innerRadiusOffset,
+      sides,
+      props
+    )
   }
 }
 
@@ -26,10 +54,38 @@ function createStar(instance, x, y, props) {
   star.stroke = stroke
 
   if (radius > 12) {
-    createSubStars(instance, x + radius / 2, y, radius / 2, sides)
-    createSubStars(instance, x - radius / 2, y, radius / 2, sides)
-    createSubStars(instance, x, y + radius / 2, radius / 2, sides)
-    createSubStars(instance, x, y - radius / 2, radius / 2, sides)
+    createSubStars(
+      instance,
+      x + radius / props.outerRadiusOffset,
+      y,
+      radius / props.outerRadiusOffset,
+      sides,
+      props
+    )
+    createSubStars(
+      instance,
+      x - radius / props.outerRadiusOffset,
+      y,
+      radius / props.outerRadiusOffset,
+      sides,
+      props
+    )
+    createSubStars(
+      instance,
+      x,
+      y + radius / props.outerRadiusOffset,
+      radius / props.outerRadiusOffset,
+      sides,
+      props
+    )
+    createSubStars(
+      instance,
+      x,
+      y - radius / props.outerRadiusOffset,
+      radius / props.outerRadiusOffset,
+      sides,
+      props
+    )
   }
 }
 
@@ -54,6 +110,8 @@ StarFractal.defaultProps = {
   sides: 8,
   stroke: 'mistyrose',
   fill: 'pink',
+  outerRadiusOffset: 2,
+  innerRadiusOffset: 2,
   style: { display: 'inline-block' },
   callback: instance => {},
   link: 'star'
