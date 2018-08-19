@@ -125,8 +125,9 @@ StarFractal.propTypes = {
   sides: PropTypes.number,
   stroke: PropTypes.string,
   fill: PropTypes.string,
-  bg: PropTypes.string,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  hasDetailsPage: PropTypes.bool,
+  link: PropTypes.bool
 }
 
 export { StarFractal }

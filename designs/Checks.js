@@ -9,7 +9,7 @@ function drawChecks(instance, props) {
   for (let x = -15; x <= instance.width; x += props.horizontalGap) {
     for (let y = -15; y <= instance.height; y += props.verticalGap) {
       const line = instance.makeLine(x, y, x + 80, y)
-      line.stroke = props.stroke
+      line.stroke = '#babcc0'
 
       renderedLines.push(line)
     }
@@ -18,7 +18,7 @@ function drawChecks(instance, props) {
   for (let x = -15; x <= instance.width; x += props.horizontalGap) {
     for (let y = -15; y <= instance.height; y += props.verticalGap) {
       const line = instance.makeLine(x, y, x, y + 20)
-      line.stroke = props.fill
+      line.stroke = '#babcc0'
 
       renderedLines.push(line)
     }
@@ -38,24 +38,24 @@ Checks.defaultProps = {
   callback: inst => {},
   scaleOffset: 0.1,
   rotationOffset: 1.5,
-  stroke: '#babcc0',
-  fill: '#babcc0',
   width: 300,
   height: 300,
   verticalGap: 20,
   horizontalGap: 20,
   link: 'checks',
-  hasDetailsPage: true,
-  style: { display: 'inline-block' }
+  hasDetailsPage: true
 }
 
 Checks.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
-  stroke: PropTypes.string,
   scaleOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   rotationOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  link: PropTypes.string,
+  verticalGap: PropTypes.number,
+  horizontalGap: PropTypes.number,
+  hasDetailsPage: PropTypes.bool
 }
 
 Checks.displayName = 'Checks'

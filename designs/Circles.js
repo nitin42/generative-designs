@@ -69,7 +69,12 @@ Circles.propTypes = {
   height: PropTypes.number,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  hasDetailsPage: PropTypes.bool,
+  link: PropTypes.string,
+  positionOffsetOne: PropTypes.number,
+  positionOffsetTwo: PropTypes.number,
+  positionOffsetThree: PropTypes.number
 }
 
 export { Circles }

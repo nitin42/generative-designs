@@ -48,10 +48,8 @@ WavyLines.defaultProps = {
   strokeDown: 'pink',
   scaleOffset: 0.08,
   rotationOffset: 4,
-  link: 'waves',
   scale: 2.5,
   hasDetailsPage: false,
-  style: { background: '#cd6090', display: 'inline-block' },
   callback: instance => {}
 }
 
@@ -63,7 +61,8 @@ WavyLines.propTypes = {
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
   callback: PropTypes.func,
-  scale: PropTypes.number
+  scale: PropTypes.number,
+  hasDetailsPage: PropTypes.bool
 }
 
 WavyLines.displayName = 'WavyLines'

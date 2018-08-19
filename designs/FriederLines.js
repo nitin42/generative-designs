@@ -52,7 +52,6 @@ FriederLines.defaultProps = {
   width: 200,
   scale: 2.2,
   hasDetailsPage: false,
-  style: { display: 'inline-block', background: '#ff7eba' },
   callback: ctrl => {}
 }
 
@@ -64,7 +63,8 @@ FriederLines.propTypes = {
   height: PropTypes.number,
   width: PropTypes.number,
   scale: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  hasDetailsPage: PropTypes.bool
 }
 
 export { FriederLines }

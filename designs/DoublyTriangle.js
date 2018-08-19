@@ -97,9 +97,7 @@ DoublyTriangle.defaultProps = {
   strokeDown: '#c6e2ff',
   width: 300,
   height: 300,
-  link: 'triangles',
-  style: { background: '#ff68af' },
-  hasDetailsPage: true
+  hasDetailsPage: false
 }
 
 DoublyTriangle.propTypes = {
@@ -109,7 +107,8 @@ DoublyTriangle.propTypes = {
   strokeDown: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  hasDetailsPage: PropTypes.bool
 }
 
 export { DoublyTriangle }

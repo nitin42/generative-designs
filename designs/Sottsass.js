@@ -83,10 +83,8 @@ SottsassPattern.defaultProps = {
   scaleOffset: 0.02,
   rotationOffset: 4,
   width: 300,
-  link: 'sottsass',
   height: 300,
-  style: { background: '#ff7eba', display: 'inline-block' },
-  hasDetailsPage: true
+  hasDetailsPage: false
 }
 
 SottsassPattern.propTypes = {
@@ -96,7 +94,8 @@ SottsassPattern.propTypes = {
   strokeDown: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  hasDetailsPage: PropTypes.bool
 }
 
 SottsassPattern.displayName = 'Sottsass Pattern'

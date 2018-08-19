@@ -46,7 +46,8 @@ MemphisDots.propTypes = {
   fill: PropTypes.string,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  hasDetailsPage: PropTypes.bool
 }
 
 MemphisDots.displayName = 'Memphis Dots'

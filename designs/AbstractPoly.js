@@ -77,10 +77,8 @@ AbstractPoly.defaultProps = {
   scaleOffset: 0.0245,
   rotationOffset: 4,
   width: 480,
-  link: 'polygon',
   height: 430,
-  hasDetailsPage: false,
-  style: { background: '#fff1f8', display: 'inline-block' }
+  hasDetailsPage: false
 }
 
 AbstractPoly.propTypes = {
@@ -88,7 +86,8 @@ AbstractPoly.propTypes = {
   height: PropTypes.number,
   scaleOffset: PropTypes.number,
   rotationOffset: PropTypes.number,
-  callback: PropTypes.func
+  callback: PropTypes.func,
+  hasDetailsPage: PropTypes.bool
 }
 
 export { AbstractPoly }
