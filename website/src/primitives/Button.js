@@ -13,6 +13,10 @@ export const Button = ({ children, ...rest }) => (
         background: #4f4f4f;
         color: white;
       }
+
+      &:focus {
+        outline: none;
+      }
     `}
     {...rest}
   >

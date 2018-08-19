@@ -3,15 +3,15 @@ import RDOM from 'react-dom'
 import { injectGlobal } from 'react-emotion'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import { Home } from './Home'
+import { Home } from './components/Home'
 
-import { ChecksDetails } from './details/ChecksDetails'
-import { StarFractalDetails } from './details/StarFractalDetails'
-import { WavesDetails } from './details/WavesDetails'
-import { SottsassDetails } from './details/SottsassDetails'
-import { PolygonDetails } from './details/PolygonDetails'
-import { DoublyTriangleDetails } from './details/DoublyTriangleDetails'
-import { CirclesDetails } from './details/CirclesDetails'
+import { ChecksDetails } from './components/details/ChecksDetails'
+import { StarFractalDetails } from './components/details/StarFractalDetails'
+import { WavesDetails } from './components/details/WavesDetails'
+import { SottsassDetails } from './components/details/SottsassDetails'
+import { PolygonDetails } from './components/details/PolygonDetails'
+import { DoublyTriangleDetails } from './components/details/DoublyTriangleDetails'
+import { CirclesDetails } from './components/details/CirclesDetails'
 
 injectGlobal`
   body {

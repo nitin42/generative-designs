@@ -13,12 +13,12 @@ export class Info extends React.Component {
         <div
           className={css`
             float: right;
-            margin-top: -10px;
+            margin-top: 4px;
             cursor: pointer;
           `}
           onClick={this.toggleModal}
         >
-          <i className="fas fa-info-circle" />
+          <i className="fas fa-info-circle fa-lg" />
         </div>
         <Modal open={this.state.open} onClose={this.toggleModal}>
           {this.props.children}

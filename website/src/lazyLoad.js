@@ -27,11 +27,11 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 const cache = createCache()
 
 const createDesignResource = createResource(
-  () => sleep(1000).then(() => import('./designs').then(mod => mod)),
+  () => sleep(2000).then(() => import('./designs').then(mod => mod)),
   t => t
 )
 const createFractalResource = createResource(
-  () => sleep(1000).then(() => import('../../src').then(mod => mod)),
+  () => sleep(2000).then(() => import('../../src').then(mod => mod)),
   t => t
 )
 
@@ -42,7 +42,7 @@ const getDesignComponent = designName => props => {
   return <Design {...props} />
 }
 
-const DefaultDelay = 500
+const DefaultDelay = 2000
 
 const withPlaceholder = (
   delay,

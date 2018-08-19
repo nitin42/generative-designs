@@ -1,18 +1,18 @@
 import React from 'react'
 import { css } from 'emotion'
+import { Link } from 'react-router-dom'
 
-import { StarFractal } from '../../../src'
+import { StarFractal } from '../../../../src'
 
 import { DetailContainer } from './DetailContainer'
 
-import { ErrorBoundary } from '../components/ErrorBoundary'
-import { Info as InfoModal } from '../components/Info'
+import { ErrorBoundary } from '../ErrorBoundary'
+import { Info as InfoModal } from '../Info'
 
-import { ColorPicker } from '../primitives/ColorPicker'
-import { RangeSlider } from '../primitives/Slider'
-import { Button } from '../primitives/Button'
-import { ShadownCanvas } from '../primitives/Canvas'
-
+import { ColorPicker } from '../../primitives/ColorPicker'
+import { RangeSlider } from '../../primitives/Slider'
+import { Button } from '../../primitives/Button'
+import { ShadowCanvas } from '../../primitives/Canvas'
 import { DownloadButton } from '../../primitives/DownloadButton'
 
 // This is required because radius offsets can overload the stack size because generating a design involves recursive computations
@@ -62,6 +62,12 @@ const Info = props => (
   </div>
 )
 
+const Back = () => (
+  <Link to="/" style={{ textDecoration: 'none', color: '#4f4f4f' }}>
+    <i className="fas fa-arrow-left fa-lg" />
+  </Link>
+)
+
 export class StarFractalDetails extends React.Component {
   state = {
     length: 80,
@@ -72,6 +78,13 @@ export class StarFractalDetails extends React.Component {
     stroke: 'mistyrose',
     showFillColorPicker: false,
     showStrokeColorPicker: false
+  }
+
+  componentDidMount() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   }
 
   updateState = (e, prop) => this.setState({ [prop]: parseInt(e.target.value) })
@@ -86,6 +99,7 @@ export class StarFractalDetails extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Back />
         <InfoModal>
           <Info />
         </InfoModal>
@@ -163,7 +177,7 @@ export class StarFractalDetails extends React.Component {
                 />
               </li>
             </ul>
-            <ShadownCanvas id="fractal-canvas" />
+            <ShadowCanvas id="fractal-canvas" />
             <DownloadButton
               designName="Star_Fractal_Design.png"
               canvasId="fractal-canvas"
