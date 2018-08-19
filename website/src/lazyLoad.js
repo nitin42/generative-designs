@@ -27,11 +27,11 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 const cache = createCache()
 
 const createDesignResource = createResource(
-  () => sleep(2000).then(() => import('./designs').then(mod => mod)),
+  () => sleep(1500).then(() => import('./designs').then(mod => mod)),
   t => t
 )
 const createFractalResource = createResource(
-  () => sleep(2000).then(() => import('../../src').then(mod => mod)),
+  () => sleep(1500).then(() => import('../../src').then(mod => mod)),
   t => t
 )
 

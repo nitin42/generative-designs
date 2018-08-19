@@ -16,13 +16,7 @@ export const ColorPicker = props => {
           marginLeft: 30,
           marginBottom: -4
         }}
-        onClick={e =>
-          props.clickHandler(
-            props.name === 'Fill:'
-              ? 'showFillColorPicker'
-              : 'showStrokeColorPicker'
-          )
-        }
+        onClick={props.clickHandler}
       />
       {props.show ? (
         <div
@@ -33,12 +27,7 @@ export const ColorPicker = props => {
         >
           <CompactPicker
             color={props.color}
-            onChange={color =>
-              props.handleColorChange(
-                color,
-                props.name === 'Fill:' ? 'fill' : 'stroke'
-              )
-            }
+            onChange={props.handleColorChange}
           />
         </div>
       ) : null}

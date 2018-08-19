@@ -138,8 +138,10 @@ export class StarFractalDetails extends React.Component {
                   name="Fill:"
                   color={this.state.fill}
                   show={this.state.showFillColorPicker}
-                  clickHandler={this.toggleColorPicker}
-                  handleColorChange={this.updateColor}
+                  clickHandler={e =>
+                    this.toggleColorPicker('showFillColorPicker')
+                  }
+                  handleColorChange={color => this.updateColor(color, 'fill')}
                 />
               </li>
               <li>
@@ -147,8 +149,10 @@ export class StarFractalDetails extends React.Component {
                   name="Stroke:"
                   color={this.state.stroke}
                   show={this.state.showStrokeColorPicker}
-                  clickHandler={this.toggleColorPicker}
-                  handleColorChange={this.updateColor}
+                  clickHandler={e =>
+                    this.toggleColorPicker('showStrokeColorPicker')
+                  }
+                  handleColorChange={color => this.updateColor(color, 'stroke')}
                 />
               </li>
               <li>
