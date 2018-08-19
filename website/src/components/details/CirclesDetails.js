@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Circles } from '../../../src'
+import { Circles } from '../../../../src'
 import { DetailContainer } from './DetailContainer'
 
 export class CirclesDetails extends React.Component {

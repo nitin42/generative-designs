@@ -1,7 +1,7 @@
 import React from 'react'
 // import styled from 'react-emotion'
 
-import { Checks } from '../../../src'
+import { Checks } from '../../../../src'
 
 import { Player } from '../Player'
 import { DetailContainer } from './DetailContainer'

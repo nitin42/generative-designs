@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { WavyLines } from '../../../src'
+import { WavyLines } from '../../../../src'
 import { DetailContainer } from './DetailContainer'
 
 export class WavesDetails extends React.Component {

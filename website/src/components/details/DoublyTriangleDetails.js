@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DoublyTriangle } from '../../../src'
+import { DoublyTriangle } from '../../../../src'
 import { DetailContainer } from './DetailContainer'
 
 export class DoublyTriangleDetails extends React.Component {

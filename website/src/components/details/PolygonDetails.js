@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AbstractPoly } from '../../../src'
+import { AbstractPoly } from '../../../../src'
 import { DetailContainer } from './DetailContainer'
 
 export class PolygonDetails extends React.Component {
