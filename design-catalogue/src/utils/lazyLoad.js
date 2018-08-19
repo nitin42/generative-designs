@@ -9,7 +9,7 @@ import {
   DTDesignPlaceholder,
   WaveLinesDesignPlaceholder,
   SottsassDesignPlaceholder
-} from './components/Placeholders'
+} from '../components/Placeholders'
 
 const LOADER_COLOR = {
   MEMPHIS: '#ffe5f1',
@@ -41,7 +41,7 @@ const createDesignResource = createResource(
 const createFractalResource = createResource(
   () =>
     sleep(SLEEP_TIMEOUT).then(() =>
-      import('../../designs-core/src').then(mod => mod)
+      import('../../../designs-core/src').then(mod => mod)
     ),
   t => t
 )

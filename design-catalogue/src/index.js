@@ -12,7 +12,7 @@ import { SottsassDetails } from './components/details/SottsassDetails'
 import { DoublyTriangleDetails } from './components/details/DoublyTriangleDetails'
 import { CirclesDetails } from './components/details/CirclesDetails'
 
-import './globalStyles'
+import './utils/globalStyles'
 
 const App = () => (
   <Router>

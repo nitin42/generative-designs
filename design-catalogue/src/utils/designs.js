@@ -9,7 +9,7 @@ import {
   SottsassPattern,
   MemphisDots,
   WavyLines
-} from '../../designs-core/src'
+} from '../../../designs-core/src'
 
 import { hoc } from './hoc'
 

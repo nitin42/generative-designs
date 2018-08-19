@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Player } from './components/Player'
+import { Player } from '../components/Player'
 
 // This high order function is generic, i.e it takes any design component,
 // and passes a callback prop to it. The callback prop is used to update the

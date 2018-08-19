@@ -2,11 +2,8 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 
 import { Heading } from './Heading'
-
 import { Footer } from './Footer'
-
 import { Player } from './Player'
-
 import { Info as InfoModal } from './Info'
 
 import {
@@ -19,7 +16,7 @@ import {
   MemphisDots,
   DoublyTriangle,
   SottsassPattern
-} from '../lazyLoad'
+} from '../utils/lazyLoad'
 
 const Catalogue = styled('div')`
   display: grid;
