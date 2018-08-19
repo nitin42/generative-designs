@@ -14,6 +14,7 @@ import { RangeSlider } from '../../primitives/Slider'
 import { Button } from '../../primitives/Button'
 import { ShadowCanvas } from '../../primitives/Canvas'
 import { DownloadButton } from '../../primitives/DownloadButton'
+import { BackButton } from '../../primitives/BackButton'
 
 // This is required because radius offsets can overload the stack size because generating a design involves recursive computations
 const FallbackUI = () => (
@@ -62,12 +63,6 @@ const Info = props => (
   </div>
 )
 
-const Back = () => (
-  <Link to="/" style={{ textDecoration: 'none', color: '#4f4f4f' }}>
-    <i className="fas fa-arrow-left fa-lg" />
-  </Link>
-)
-
 export class StarFractalDetails extends React.Component {
   state = {
     length: 80,
@@ -99,7 +94,7 @@ export class StarFractalDetails extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Back />
+        <BackButton />
         <InfoModal>
           <Info />
         </InfoModal>
