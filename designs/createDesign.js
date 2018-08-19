@@ -34,8 +34,27 @@ export function createDesign(sketch) {
     }
 
     render() {
-      return (
-        <Link to={`/${this.props.link}`}>
+      if (this.props.hasDetailsPage) {
+        return (
+          <Link to={`/${this.props.link}`}>
+            <div
+              className={
+                this.props.className +
+                ' ' +
+                css`
+                  -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+                  -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+                  box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+                  cursor: pointer;
+                `
+              }
+              id={this.props.id}
+              style={this.props.style || {}}
+            />
+          </Link>
+        )
+      } else {
+        return (
           <div
             className={
               this.props.className +
@@ -44,14 +63,13 @@ export function createDesign(sketch) {
                 -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
                 -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
                 box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-                cursor: pointer;
               `
             }
             id={this.props.id}
             style={this.props.style || {}}
           />
-        </Link>
-      )
+        )
+      }
     }
   }
 }

@@ -98,7 +98,8 @@ DoublyTriangle.defaultProps = {
   width: 300,
   height: 300,
   link: 'triangles',
-  style: { background: '#ff68af' }
+  style: { background: '#ff68af' },
+  hasDetailsPage: true
 }
 
 DoublyTriangle.propTypes = {

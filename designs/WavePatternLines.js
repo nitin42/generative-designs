@@ -50,6 +50,7 @@ WavyLines.defaultProps = {
   rotationOffset: 4,
   link: 'waves',
   scale: 2.5,
+  hasDetailsPage: false,
   style: { background: '#cd6090', display: 'inline-block' },
   callback: instance => {}
 }

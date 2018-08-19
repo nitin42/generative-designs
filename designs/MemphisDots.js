@@ -36,7 +36,8 @@ MemphisDots.defaultProps = {
   rotationOffset: 4,
   height: 300,
   width: 300,
-  scale: 1
+  scale: 1,
+  hasDetailsPage: false
 }
 
 MemphisDots.propTypes = {

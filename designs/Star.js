@@ -114,7 +114,8 @@ StarFractal.defaultProps = {
   innerRadiusOffset: 2,
   style: { display: 'inline-block' },
   callback: instance => {},
-  link: 'star'
+  link: 'star',
+  hasDetailsPage: true
 }
 
 StarFractal.propTypes = {

@@ -45,6 +45,7 @@ Checks.defaultProps = {
   verticalGap: 20,
   horizontalGap: 20,
   link: 'checks',
+  hasDetailsPage: true,
   style: { display: 'inline-block' }
 }
 

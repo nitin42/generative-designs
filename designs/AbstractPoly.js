@@ -79,6 +79,7 @@ AbstractPoly.defaultProps = {
   width: 480,
   link: 'polygon',
   height: 430,
+  hasDetailsPage: false,
   style: { background: '#fff1f8', display: 'inline-block' }
 }
 

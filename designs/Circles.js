@@ -60,6 +60,7 @@ Circles.defaultProps = {
   positionOffsetOne: 20,
   positionOffsetTwo: 30,
   positionOffsetThree: 40,
+  hasDetailsPage: true,
   link: 'circles'
 }
 

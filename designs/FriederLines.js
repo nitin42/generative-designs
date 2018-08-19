@@ -51,6 +51,7 @@ FriederLines.defaultProps = {
   height: 200,
   width: 200,
   scale: 2.2,
+  hasDetailsPage: false,
   style: { display: 'inline-block', background: '#ff7eba' },
   callback: ctrl => {}
 }

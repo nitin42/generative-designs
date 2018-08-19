@@ -85,7 +85,8 @@ SottsassPattern.defaultProps = {
   width: 300,
   link: 'sottsass',
   height: 300,
-  style: { background: '#ff7eba', display: 'inline-block' }
+  style: { background: '#ff7eba', display: 'inline-block' },
+  hasDetailsPage: true
 }
 
 SottsassPattern.propTypes = {
