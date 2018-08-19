@@ -8,7 +8,7 @@ export const RangeSlider = props => (
     value={props.value}
     name={props.name}
     step={props.step || 1}
-    onChange={e => props.onChange(e, props.name)}
+    onChange={props.onChange}
     className="slider"
   />
 )

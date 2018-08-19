@@ -27,6 +27,8 @@ export class ChecksDetails extends React.Component {
     })
   }
 
+  updateState = (e, prop) => this.setState({ [prop]: parseInt(e.target.value) })
+
   render() {
     return (
       <React.Fragment>

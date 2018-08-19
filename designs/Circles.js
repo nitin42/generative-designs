@@ -15,7 +15,7 @@ function drawCircle(offset, color, instance) {
   const circles = []
 
   for (let x = 20; x <= instance.width; x += 15) {
-    const circle = instance.makeCircle(offset, x, random(0, 10), random(0, 10))
+    const circle = instance.makeCircle(offset, x, random(0, 10))
     circle.fill = color
     circle.noStroke()
 
@@ -28,12 +28,12 @@ function drawCircle(offset, color, instance) {
 function drawPattern(instance, props) {
   let renderedCircles = []
 
-  for (let x = 10; x <= instance.width; x += 20) {
+  for (let x = 10; x <= instance.width; x += props.positionOffsetOne) {
     renderedCircles.push(drawCircle(x, colors.CIRCLE_ONE, instance))
-    x += 20
+    x += props.positionOffsetTwo
 
     renderedCircles.push(drawCircle(x, colors.CIRCLE_TWO, instance))
-    x += 20
+    x += props.positionOffsetThree
 
     renderedCircles.push(drawCircle(x, colors.CIRCLE_THREE, instance))
   }
@@ -57,6 +57,9 @@ Circles.defaultProps = {
   rotationOffset: 4,
   width: 400,
   height: 300,
+  positionOffsetOne: 20,
+  positionOffsetTwo: 30,
+  positionOffsetThree: 40,
   link: 'circles'
 }
 

@@ -120,7 +120,7 @@ export class StarFractalDetails extends React.Component {
                   min="1"
                   max="250"
                   value={this.state.length}
-                  onChange={this.updateState}
+                  onChange={e => this.updateState(e, 'length')}
                 />
               </li>
               <li>
@@ -130,7 +130,7 @@ export class StarFractalDetails extends React.Component {
                   min="1"
                   max="30"
                   value={this.state.sides}
-                  onChange={this.updateState}
+                  onChange={e => this.updateState(e, 'sides')}
                 />
               </li>
               <li>
@@ -162,7 +162,7 @@ export class StarFractalDetails extends React.Component {
                   min="2"
                   max="10"
                   value={this.state.innerRadiusOffset}
-                  onChange={this.updateState}
+                  onChange={e => this.updateState(e, 'innerRadiusOffset')}
                 />
               </li>
               <li>
@@ -172,7 +172,7 @@ export class StarFractalDetails extends React.Component {
                   min="2"
                   max="10"
                   value={this.state.outerRadiusOffset}
-                  onChange={this.updateState}
+                  onChange={e => this.updateState(e, 'outerRadiusOffset')}
                 />
               </li>
             </ul>
