@@ -8,7 +8,7 @@
   <img src="./assets/GD.png">
 </p>
 
-This repository contains a collection of generative design React components with which you can play, alter parameters and generate different designs with the same computation model.
+This repository contains a collection of generative design React components with which you can play and change parameters to transform the design.
 
 ## Table of contents
 
