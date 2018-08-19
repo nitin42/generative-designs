@@ -8,7 +8,7 @@ function drawChecks(instance, props) {
 
   for (let x = -15; x <= instance.width; x += props.horizontalGap) {
     for (let y = -15; y <= instance.height; y += props.verticalGap) {
-      const line = instance.makeLine(x, y, x + 80, y)
+      const line = instance.makeLine(x, y, x + 50, y)
       line.stroke = '#babcc0'
 
       renderedLines.push(line)
@@ -17,7 +17,7 @@ function drawChecks(instance, props) {
 
   for (let x = -15; x <= instance.width; x += props.horizontalGap) {
     for (let y = -15; y <= instance.height; y += props.verticalGap) {
-      const line = instance.makeLine(x, y, x, y + 20)
+      const line = instance.makeLine(x, y, x, y + 50)
       line.stroke = '#babcc0'
 
       renderedLines.push(line)

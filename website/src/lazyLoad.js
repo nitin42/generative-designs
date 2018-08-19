@@ -22,6 +22,12 @@ const LOADER_COLOR = {
   CIRCLES: '#ff7f7f'
 }
 
+// We are using suspense here to suspend rendering while the design gets resolved, in other words, suspend rendering while the designs are being computed.
+// Synchronously rendering all the designs is heavy because it has a lot of computation overhead, which includes applying operations such as translation, rotation and rendering the svg path
+// It's still far from perfect atleast it doesn't degrades the UX
+
+const DefaultDelay = 2000
+
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const cache = createCache()
@@ -41,8 +47,6 @@ const getDesignComponent = designName => props => {
 
   return <Design {...props} />
 }
-
-const DefaultDelay = 2000
 
 const withPlaceholder = (
   delay,
