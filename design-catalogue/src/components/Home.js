@@ -24,9 +24,15 @@ import {
 const Catalogue = styled('div')`
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
-  grid-gap: 20px;
-  padding: 40px;
+  justify-content: center;
+  grid-gap: 40px;
   margin-left: 40px;
+
+  @media screen and (max-device-width: 480px) {
+    grid-template-columns: 300px;
+    grid-gap: 20px;
+    margin-left: 10px;
+  }
 `
 
 const Info = props => (

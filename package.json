@@ -1,13 +1,12 @@
 {
   "name": "generative-design",
   "version": "1.0.0",
-  "description": "A collection of generative design components",
-  "main": "./design-catalogue/src/index.js",
+  "description": "A collection of generative design React components",
+  "main": "./design-core/src/index.js",
   "author": "Nitin Tulswani",
   "license": "MIT",
   "dependencies": {
     "emotion": "^9.2.6",
-    "prop-types": "^15.6.2",
     "react": ">=0.14",
     "react-color": "^2.14.1",
     "react-dom": ">=0.14",
@@ -30,7 +29,7 @@
     "prettier": "^1.14.2"
   },
   "scripts": {
-    "start": "parcel ./design-catalogue/public/index.html",
+    "start": "parcel ./public/index.html",
     "build": "NODE_ENV=production parcel build ./design-catalogue/src/index.js"
   },
   "husky": {

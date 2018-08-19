@@ -15,8 +15,8 @@ const StyledPlaceholder = styled('div')`
   -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  width: ${props => props.width};
-  height: ${props => props.height};
+  width: 300px;
+  height: 300px;
   display: flex;
   justify-content: center;
   aligns-items: center;
@@ -80,7 +80,7 @@ const DotTwo = styled('div')`
 `
 
 const createPlaceholder = (bg, loaderColor) => (
-  <StyledPlaceholder bg={bg || '#fff'} width={300} height={300}>
+  <StyledPlaceholder bg={bg || '#fff'}>
     <Spinner>
       <DotOne color={loaderColor} />
       <DotTwo color={loaderColor} />

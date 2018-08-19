@@ -102,8 +102,8 @@ export class StarFractalDetails extends React.Component {
           <ErrorBoundary fallbackUI={<FallbackUI />}>
             <StarFractal
               id="fractal"
-              width={500}
-              height={500}
+              width={window.innerWidth < 480 ? 320 : 500}
+              height={window.innerWidth < 480 ? 320 : 500}
               length={this.state.length}
               sides={this.state.sides}
               className="animated zoomIn"

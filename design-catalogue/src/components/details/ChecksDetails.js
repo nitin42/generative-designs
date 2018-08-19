@@ -41,8 +41,8 @@ export class ChecksDetails extends React.Component {
             scaleOffset={this.state.scaleOffset}
             verticalGap={this.state.verticalGap}
             horizontalGap={this.state.horizontalGap}
-            width={500}
-            height={500}
+            width={window.innerWidth < 480 ? 320 : 500}
+            height={window.innerWidth < 480 ? 320 : 500}
             className="animated zoomIn"
           />
           <Player instance={this.state.instance} />

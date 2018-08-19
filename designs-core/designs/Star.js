@@ -110,7 +110,6 @@ StarFractal.defaultProps = {
   fill: 'pink',
   outerRadiusOffset: 2,
   innerRadiusOffset: 2,
-  style: { display: 'inline-block' },
   callback: instance => {},
   link: 'star',
   hasDetailsPage: true

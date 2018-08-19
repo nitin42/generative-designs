@@ -33,8 +33,8 @@ export class CirclesDetails extends React.Component {
         <DetailContainer>
           <Circles
             id="circles-details"
-            width={500}
-            height={500}
+            width={window.innerWidth < 480 ? 320 : 500}
+            height={window.innerWidth < 480 ? 320 : 500}
             className="animated zoomIn"
             positionOffsetOne={this.state.positionOffsetOne}
             positionOffsetTwo={this.state.positionOffsetTwo}

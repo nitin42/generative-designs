@@ -72,6 +72,8 @@ export const SottsassDesign = hoc(props => (
 export const DoubleTriangleDesign = hoc(props => (
   <DoublyTriangle
     id="triangle"
+    width={300}
+    height={300}
     callback={props.cb}
     style={{ background: '#ff68af' }}
   />

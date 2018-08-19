@@ -23,22 +23,26 @@ const LOADER_COLOR = {
 }
 
 // We are using suspense here to suspend rendering while the design gets resolved, in other words, suspend rendering while the designs are being computed.
-// Synchronously rendering all the designs is heavy because it has a lot of computation overhead, which includes applying operations such as translation, rotation and rendering the svg path
-// It's still far from perfect atleast it doesn't degrades the UX
+// Synchronously rendering all the designs is computationally heavy because it involves a lot of computational overhead, which includes applying operations such as translation, rotation and rendering the svg path
+// This solution is still far from perfect but atleast it doesn't degrade the UX by flashing all the computed design at once on each refresh
 
-const DefaultDelay = 2000
+const DEFAULT_DELAY = 2000
+
+const SLEEP_TIMEOUT = 2000
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const cache = createCache()
 
 const createDesignResource = createResource(
-  () => sleep(1500).then(() => import('./designs').then(mod => mod)),
+  () => sleep(SLEEP_TIMEOUT).then(() => import('./designs').then(mod => mod)),
   t => t
 )
 const createFractalResource = createResource(
   () =>
-    sleep(1500).then(() => import('../../designs-core/src').then(mod => mod)),
+    sleep(SLEEP_TIMEOUT).then(() =>
+      import('../../designs-core/src').then(mod => mod)
+    ),
   t => t
 )
 
@@ -60,7 +64,7 @@ const withPlaceholder = (
 )
 
 export const StarFractal = withPlaceholder(
-  DefaultDelay,
+  DEFAULT_DELAY,
   ChecksDesignPlaceholder('mistyrose'),
   props => {
     const Fractal = createFractalResource.read(cache, props)
@@ -69,42 +73,42 @@ export const StarFractal = withPlaceholder(
   }
 )
 export const ChecksDesign = withPlaceholder(
-  DefaultDelay,
+  DEFAULT_DELAY,
   ChecksDesignPlaceholder(LOADER_COLOR.CHECKS),
   getDesignComponent('ChecksDesign')
 )
 export const PolygonDesign = withPlaceholder(
-  DefaultDelay,
+  DEFAULT_DELAY,
   PolygonDesignPlaceholder(LOADER_COLOR.POLYGON),
   getDesignComponent('PolygonDesign')
 )
 export const FriederLines = withPlaceholder(
-  DefaultDelay,
+  DEFAULT_DELAY,
   FriederLinesDesignPlaceholder(LOADER_COLOR.FRIEDER),
   getDesignComponent('FriederLinesDesign')
 )
 export const WavyLines = withPlaceholder(
-  DefaultDelay,
+  DEFAULT_DELAY,
   WaveLinesDesignPlaceholder(LOADER_COLOR.WAVES),
   getDesignComponent('WaveLinesDesign')
 )
 export const Circles = withPlaceholder(
-  DefaultDelay,
+  DEFAULT_DELAY,
   ChecksDesignPlaceholder(LOADER_COLOR.CIRCLES),
   getDesignComponent('CirclesDesign')
 )
 export const DoublyTriangle = withPlaceholder(
-  DefaultDelay,
+  DEFAULT_DELAY,
   DTDesignPlaceholder(LOADER_COLOR.TRIANGLE),
   getDesignComponent('DoubleTriangleDesign')
 )
 export const MemphisDots = withPlaceholder(
-  DefaultDelay,
+  DEFAULT_DELAY,
   MemphisDesignPlaceholder(LOADER_COLOR.MEMPHIS),
   getDesignComponent('MemphisDesign')
 )
 export const SottsassPattern = withPlaceholder(
-  DefaultDelay,
+  DEFAULT_DELAY,
   SottsassDesignPlaceholder(LOADER_COLOR.SOTTSASS),
   getDesignComponent('SottsassDesign')
 )
