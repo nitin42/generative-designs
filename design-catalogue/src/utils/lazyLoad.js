@@ -26,9 +26,9 @@ const LOADER_COLOR = {
 // Synchronously rendering all the designs is computationally heavy because it involves a lot of computational overhead, which includes applying operations such as translation, rotation and rendering the svg path
 // This solution is still far from perfect but atleast it doesn't degrade the UX by flashing all the computed design at once on each refresh
 
-const DEFAULT_DELAY = 2000
+const DEFAULT_DELAY = 1500
 
-const SLEEP_TIMEOUT = 2000
+const SLEEP_TIMEOUT = 1000
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 

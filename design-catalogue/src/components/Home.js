@@ -39,6 +39,14 @@ const Info = props => (
       font-size: 1.2em;
       width: 350px;
       line-height: 1.5;
+      text-align: justify;
+
+      @media screen and (max-device-width: 480px) {
+        font-size: 1em;
+        width: 300px;
+        line-height: 1.5;
+        text-align: justify;
+      }
     `}
   >
     <p>Hello 👋</p>

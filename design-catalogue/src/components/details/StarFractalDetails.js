@@ -25,6 +25,14 @@ const FallbackUI = () => (
         font-size: 1.2em;
         word-spacing: 2;
         margin-top: 10em;
+        text-align: justify;
+
+        @media screen and (max-device-width: 480px) {
+          font-size: 1em;
+          width: 350px;
+          line-height: 1.5;
+          text-align: justify;
+        }
       `}
     >
       It seems like you are changing the inner radius or outer radius offset too
@@ -45,6 +53,13 @@ const Info = props => (
       width: 350px;
       line-height: 1.5;
       text-align: justify;
+
+      @media screen and (max-device-width: 480px) {
+        font-size: 1em;
+        width: 300px;
+        line-height: 1.5;
+        text-align: justify;
+      }
     `}
   >
     <h1>Star Fractal</h1>
