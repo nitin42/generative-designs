@@ -37,7 +37,8 @@ const createDesignResource = createResource(
   t => t
 )
 const createFractalResource = createResource(
-  () => sleep(1500).then(() => import('../../src').then(mod => mod)),
+  () =>
+    sleep(1500).then(() => import('../../designs-core/src').then(mod => mod)),
   t => t
 )
 

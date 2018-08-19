@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { createDesign } from './createDesign'
 import { startRotation } from '../animations/Rotation'
 
@@ -79,15 +77,6 @@ AbstractPoly.defaultProps = {
   width: 480,
   height: 430,
   hasDetailsPage: false
-}
-
-AbstractPoly.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  scaleOffset: PropTypes.number,
-  rotationOffset: PropTypes.number,
-  callback: PropTypes.func,
-  hasDetailsPage: PropTypes.bool
 }
 
 export { AbstractPoly }

@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { createDesign } from './createDesign'
 import { random } from '../utils'
 import { startRotation } from '../animations/Rotation'
@@ -85,17 +83,6 @@ SottsassPattern.defaultProps = {
   width: 300,
   height: 300,
   hasDetailsPage: false
-}
-
-SottsassPattern.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  strokeUp: PropTypes.string,
-  strokeDown: PropTypes.string,
-  scaleOffset: PropTypes.number,
-  rotationOffset: PropTypes.number,
-  callback: PropTypes.func,
-  hasDetailsPage: PropTypes.bool
 }
 
 SottsassPattern.displayName = 'Sottsass Pattern'

@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { createDesign } from './createDesign'
 
 // This is required for generating different stars
@@ -116,18 +114,6 @@ StarFractal.defaultProps = {
   callback: instance => {},
   link: 'star',
   hasDetailsPage: true
-}
-
-StarFractal.propTypes = {
-  length: PropTypes.number,
-  height: PropTypes.number,
-  width: PropTypes.number,
-  sides: PropTypes.number,
-  stroke: PropTypes.string,
-  fill: PropTypes.string,
-  callback: PropTypes.func,
-  hasDetailsPage: PropTypes.bool,
-  link: PropTypes.bool
 }
 
 export { StarFractal }

@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from 'emotion'
 import { Link } from 'react-router-dom'
 
-import { StarFractal } from '../../../../src'
+import { StarFractal } from '../../../../designs-core/src'
 
 import { DetailContainer } from './DetailContainer'
 

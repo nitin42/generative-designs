@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { startRotation } from '../animations/Rotation'
 import { createDesign } from './createDesign'
 
@@ -51,18 +49,6 @@ WavyLines.defaultProps = {
   scale: 2.5,
   hasDetailsPage: false,
   callback: instance => {}
-}
-
-WavyLines.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  strokeUp: PropTypes.string,
-  strokeDown: PropTypes.string,
-  scaleOffset: PropTypes.number,
-  rotationOffset: PropTypes.number,
-  callback: PropTypes.func,
-  scale: PropTypes.number,
-  hasDetailsPage: PropTypes.bool
 }
 
 WavyLines.displayName = 'WavyLines'

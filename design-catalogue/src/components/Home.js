@@ -47,9 +47,9 @@ const Info = props => (
     <h3>Parameterization</h3>
     <p>
       To be able to create a bridge between transformation and visualization,
-      you can click on a design to pop-up a details page. On the details page,
-      you will find a list of controls to change the parameters of a design. Use
-      of parameters defines a system of visualization and simulation.
+      you can click on some of the designs to open the details page. On the
+      details page, you will find a list of controls to change the parameters of
+      the design.
     </p>
   </div>
 )

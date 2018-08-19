@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { createDesign } from './createDesign'
 import { random } from '../utils'
 import { startRotation } from '../animations/Rotation'
@@ -38,16 +36,6 @@ MemphisDots.defaultProps = {
   width: 300,
   scale: 1,
   hasDetailsPage: false
-}
-
-MemphisDots.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  fill: PropTypes.string,
-  scaleOffset: PropTypes.number,
-  rotationOffset: PropTypes.number,
-  callback: PropTypes.func,
-  hasDetailsPage: PropTypes.bool
 }
 
 MemphisDots.displayName = 'Memphis Dots'

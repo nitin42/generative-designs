@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { createDesign } from './createDesign'
 import { startRotation } from '../animations/Rotation'
 import { random } from '../utils'
@@ -98,17 +96,6 @@ DoublyTriangle.defaultProps = {
   width: 300,
   height: 300,
   hasDetailsPage: false
-}
-
-DoublyTriangle.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  strokeUp: PropTypes.string,
-  strokeDown: PropTypes.string,
-  scaleOffset: PropTypes.number,
-  rotationOffset: PropTypes.number,
-  callback: PropTypes.func,
-  hasDetailsPage: PropTypes.bool
 }
 
 export { DoublyTriangle }

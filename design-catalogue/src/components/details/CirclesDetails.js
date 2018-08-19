@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Circles } from '../../../../src'
+import { Circles } from '../../../../designs-core/src'
 import { DetailContainer } from './DetailContainer'
 
 import { Player } from '../Player'

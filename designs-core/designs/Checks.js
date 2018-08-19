@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { createDesign } from './createDesign'
 import { startRotation } from '../animations/Rotation'
 
@@ -44,18 +42,6 @@ Checks.defaultProps = {
   horizontalGap: 20,
   link: 'checks',
   hasDetailsPage: true
-}
-
-Checks.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  scaleOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  rotationOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  callback: PropTypes.func,
-  link: PropTypes.string,
-  verticalGap: PropTypes.number,
-  horizontalGap: PropTypes.number,
-  hasDetailsPage: PropTypes.bool
 }
 
 Checks.displayName = 'Checks'

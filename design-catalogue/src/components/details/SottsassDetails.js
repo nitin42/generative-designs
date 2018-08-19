@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SottsassPattern } from '../../../../src'
+import { SottsassPattern } from '../../../../designs-core/src'
 import { DetailContainer } from './DetailContainer'
 
 export class SottsassDetails extends React.Component {

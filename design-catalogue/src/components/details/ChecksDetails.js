@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Checks } from '../../../../src'
+import { Checks } from '../../../../designs-core/src'
 
 import { DetailContainer } from './DetailContainer'
 

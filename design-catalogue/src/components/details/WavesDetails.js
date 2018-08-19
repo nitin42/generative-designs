@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { WavyLines } from '../../../../src'
+import { WavyLines } from '../../../../designs-core/src'
 import { DetailContainer } from './DetailContainer'
 
 import { Player } from '../Player'

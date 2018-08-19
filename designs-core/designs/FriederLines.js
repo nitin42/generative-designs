@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { startRotation } from '../animations/Rotation'
 import { createDesign } from './createDesign'
 
@@ -53,18 +51,6 @@ FriederLines.defaultProps = {
   scale: 2.2,
   hasDetailsPage: false,
   callback: ctrl => {}
-}
-
-FriederLines.propTypes = {
-  strokeVert: PropTypes.string,
-  strokeHor: PropTypes.string,
-  scaleOffset: PropTypes.number,
-  rotationOffset: PropTypes.number,
-  height: PropTypes.number,
-  width: PropTypes.number,
-  scale: PropTypes.number,
-  callback: PropTypes.func,
-  hasDetailsPage: PropTypes.bool
 }
 
 export { FriederLines }
