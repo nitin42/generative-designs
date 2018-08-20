@@ -24,7 +24,13 @@ export const ChecksDesign = hoc(props => (
 ))
 
 export const CirclesDesign = hoc(props => (
-  <Circles id="circles" width={300} height={300} callback={props.cb} />
+  <Circles
+    id="circles"
+    width={300}
+    height={300}
+    style={{ display: 'block' }}
+    callback={props.cb}
+  />
 ))
 
 export const PolygonDesign = hoc(props => (

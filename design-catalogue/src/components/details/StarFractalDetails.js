@@ -121,6 +121,7 @@ export class StarFractalDetails extends React.Component {
               height={window.innerWidth < 480 ? 320 : 500}
               length={this.state.length}
               sides={this.state.sides}
+              style={{ display: 'block' }}
               className="animated zoomIn"
               fill={this.state.fill}
               stroke={this.state.stroke}

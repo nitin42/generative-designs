@@ -60,8 +60,23 @@ const Info = props => (
       To be able to create a bridge between transformation and visualization,
       you can click on some of the designs to open the details page. On the
       details page, you will find a list of controls to change the parameters of
-      the design.
+      the design. Optionally, you can also save the transformed design.
     </p>
+    <p>
+      The source code for all the designs is available on{' '}
+      <a
+        className={css`
+          font-weight: bold;
+          border-bottom: 2px solid #4f4f4f;
+        `}
+        href="https://github.com/nitin42/generative-designs"
+        target="_blank"
+      >
+        GitHub
+      </a>
+      .
+    </p>
+    <p>Have fun!</p>
   </div>
 )
 
