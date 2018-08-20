@@ -19,7 +19,7 @@ export const ChecksDesign = hoc(props => (
     width={300}
     height={300}
     callback={props.cb}
-    style={{ display: 'inline-block' }}
+    style={{ display: 'block' }}
   />
 ))
 
@@ -33,7 +33,7 @@ export const PolygonDesign = hoc(props => (
     width={300}
     height={300}
     callback={props.cb}
-    style={{ background: '#fff1f8', display: 'inline-block' }}
+    style={{ background: '#fff1f8', display: 'block' }}
   />
 ))
 
@@ -44,7 +44,7 @@ export const WaveLinesDesign = hoc(props => (
     height={300}
     scale={3}
     callback={props.cb}
-    style={{ background: '#cd6090', display: 'inline-block' }}
+    style={{ background: '#cd6090', display: 'block' }}
   />
 ))
 
@@ -55,7 +55,7 @@ export const FriederLinesDesign = hoc(props => (
     height={300}
     scale={3}
     callback={props.cb}
-    style={{ display: 'inline-block', background: '#ff7eba' }}
+    style={{ display: 'block', background: '#ff7eba' }}
   />
 ))
 
@@ -65,7 +65,7 @@ export const SottsassDesign = hoc(props => (
     width={300}
     height={300}
     callback={props.cb}
-    style={{ background: '#ff7eba', display: 'inline-block' }}
+    style={{ background: '#ff7eba', display: 'block' }}
   />
 ))
 

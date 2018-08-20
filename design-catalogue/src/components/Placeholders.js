@@ -11,9 +11,9 @@ const PLACEHOLDER_BACKGROUND = {
 }
 
 const StyledPlaceholder = styled('div')`
-  -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
+  -moz-box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
+  box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
   cursor: pointer;
   width: 300px;
   height: 300px;
