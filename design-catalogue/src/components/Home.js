@@ -23,12 +23,12 @@ const Catalogue = styled('div')`
   grid-template-columns: repeat(auto-fill, 300px);
   justify-content: center;
   grid-gap: 40px;
-  margin-left: 40px;
+  margin-left: 20px;
 
   @media screen and (max-device-width: 480px) {
     grid-template-columns: 300px;
     grid-gap: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
   }
 `
 
