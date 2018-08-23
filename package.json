@@ -1,10 +1,7 @@
 {
-  "name": "generative-design",
-  "version": "1.0.0",
+  "name": "generative-designs",
+  "version": "0.4.0",
   "description": "A collection of generative design React components",
-  "main": "build/generative-designs-min.js",
-  "module": "build/generative-designs-min.es.js",
-  "unpkg": "build/generative-designs-min.min.js",
   "author": "Nitin Tulswani",
   "license": "MIT",
   "dependencies": {
@@ -32,17 +29,12 @@
     "lerna": "^3.1.1",
     "lint-staged": "^7.2.0",
     "parcel-bundler": "^1.9.7",
-    "prettier": "^1.14.2",
-    "rollup": "^0.64.1",
-    "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-uglify": "^4.0.0"
+    "prettier": "^1.14.2"
   },
   "scripts": {
     "start": "parcel ./public/index.html",
     "build:catalogue": "NODE_ENV=production parcel build ./design-catalogue/src/index.js",
-    "deploy": "yarn build && surge",
-    "build:designs": "NODE_ENV=production rollup -c"
+    "deploy": "yarn build && surge"
   },
   "husky": {
     "hooks": {
