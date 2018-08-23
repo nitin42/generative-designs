@@ -1,7 +1,7 @@
 import { createDesign } from './createDesign'
 import { startRotation } from '../animations/Rotation'
 
-import { random } from '../utils'
+import { random } from '../utils/index'
 
 const colors = {
   CIRCLE_ONE: '#ff4444',

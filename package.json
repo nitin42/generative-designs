@@ -2,7 +2,9 @@
   "name": "generative-design",
   "version": "1.0.0",
   "description": "A collection of generative design React components",
-  "main": "./design-core/src/index.js",
+  "main": "build/generative-designs-min.js",
+  "module": "build/generative-designs-min.es.js",
+  "unpkg": "build/generative-designs-min.min.js",
   "author": "Nitin Tulswani",
   "license": "MIT",
   "dependencies": {
@@ -19,19 +21,28 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.1.2",
     "husky": "^1.0.0-rc.13",
     "lerna": "^3.1.1",
     "lint-staged": "^7.2.0",
     "parcel-bundler": "^1.9.7",
-    "prettier": "^1.14.2"
+    "prettier": "^1.14.2",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-uglify": "^4.0.0"
   },
   "scripts": {
     "start": "parcel ./public/index.html",
-    "build": "NODE_ENV=production parcel build ./design-catalogue/src/index.js",
-    "deploy": "yarn build && surge"
+    "build:catalogue": "NODE_ENV=production parcel build ./design-catalogue/src/index.js",
+    "deploy": "yarn build && surge",
+    "build:designs": "NODE_ENV=production rollup -c"
   },
   "husky": {
     "hooks": {

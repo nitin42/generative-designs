@@ -1,8 +1,6 @@
 import { createDesign } from './createDesign'
 import { startRotation } from '../animations/Rotation'
 
-import { random } from '../utils'
-
 function drawOddHex(instance, len, y) {
   let count = 0
   const renderedHex = []

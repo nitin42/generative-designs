@@ -1,5 +1,5 @@
 import { createDesign } from './createDesign'
-import { random } from '../utils'
+import { random } from '../utils/index'
 import { startRotation } from '../animations/Rotation'
 
 function drawLines(instance, props) {

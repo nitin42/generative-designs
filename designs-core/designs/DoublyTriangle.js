@@ -1,6 +1,6 @@
 import { createDesign } from './createDesign'
 import { startRotation } from '../animations/Rotation'
-import { random } from '../utils'
+import { random } from '../utils/index'
 
 function drawTriangle(instance, props) {
   const triangles = []

@@ -1,9 +1,10 @@
 {
   "presets": [
-    "react-app"
+    ["env", { "modules": false, "loose": true }],
+    "react"
   ],
   "plugins": [
-    "transform-class-properties",
-    "syntax-dynamic-import"
+    "transform-object-rest-spread",
+    "transform-class-properties"
   ]
 }

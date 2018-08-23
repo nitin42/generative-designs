@@ -1,5 +1,4 @@
 import { createDesign } from './createDesign'
-import { random } from '../utils'
 import { startRotation } from '../animations/Rotation'
 
 function drawDots(instance, props) {
