@@ -2,6 +2,10 @@
 
 > A collection of interactive generative designs.
 
+<p>
+  <img src="./assets/logo.png"  />
+</p>
+
 This repository contains a collection of generative design React components with which you can play and change parameters to transform the design.
 
 > **This project will continue to evolve as I add more designs**
