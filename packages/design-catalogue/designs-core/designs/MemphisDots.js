@@ -33,8 +33,7 @@ MemphisDots.defaultProps = {
   rotationOffset: 4,
   height: 300,
   width: 300,
-  scale: 1,
-  hasDetailsPage: false
+  scale: 1
 }
 
 MemphisDots.displayName = 'Memphis Dots'

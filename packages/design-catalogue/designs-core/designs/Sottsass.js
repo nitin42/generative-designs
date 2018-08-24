@@ -81,8 +81,7 @@ SottsassPattern.defaultProps = {
   scaleOffset: 0.02,
   rotationOffset: 4,
   width: 300,
-  height: 300,
-  hasDetailsPage: false
+  height: 300
 }
 
 SottsassPattern.displayName = 'Sottsass Pattern'

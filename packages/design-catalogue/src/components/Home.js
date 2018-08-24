@@ -93,6 +93,7 @@ export const Home = props => (
         height={300}
         length={80}
         sides={4}
+        style={{ cursor: 'auto' }}
       />
       <ChecksDesign />
       <PolygonDesign />

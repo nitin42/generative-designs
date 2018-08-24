@@ -94,8 +94,7 @@ DoublyTriangle.defaultProps = {
   strokeUp: '#ffc0cb',
   strokeDown: '#c6e2ff',
   width: 300,
-  height: 300,
-  hasDetailsPage: false
+  height: 300
 }
 
 export { DoublyTriangle }

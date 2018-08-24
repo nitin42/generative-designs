@@ -49,7 +49,6 @@ FriederLines.defaultProps = {
   height: 200,
   width: 200,
   scale: 2.2,
-  hasDetailsPage: false,
   callback: ctrl => {}
 }
 

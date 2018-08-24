@@ -47,7 +47,6 @@ WavyLines.defaultProps = {
   scaleOffset: 0.08,
   rotationOffset: 4,
   scale: 2.5,
-  hasDetailsPage: false,
   callback: instance => {}
 }
 

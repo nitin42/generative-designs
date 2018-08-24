@@ -7,21 +7,6 @@ import { DoublyTriangle } from '../designs/DoublyTriangle'
 import { Checks } from '../designs/Checks'
 import { MemphisDots } from '../designs/MemphisDots'
 import { AbstractPoly } from '../designs/AbstractPoly'
-import { createDesign } from '../designs/createDesign'
-import { startRotation } from '../animations/Rotation'
-
-// Animation modules
-const Animations = {
-  rotation: startRotation
-}
-
-const generative = {
-  // Create custom generative art using this HOC design constructor
-  createDesign,
-  Animations
-}
-
-export default generative
 
 // Generative designs
 export {

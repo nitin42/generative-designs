@@ -1,7 +1,6 @@
 import React from 'react'
 import Two from 'two.js'
 import { css } from 'emotion'
-import { Link } from 'react-router-dom'
 
 import { flush } from '../renderer/flush'
 
@@ -34,42 +33,22 @@ export function createDesign(sketch) {
     }
 
     render() {
-      if (this.props.hasDetailsPage) {
-        return (
-          <Link to={`/${this.props.link}`}>
-            <div
-              className={
-                this.props.className +
-                ' ' +
-                css`
-                  -webkit-box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
-                  -moz-box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
-                  box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
-                  cursor: pointer;
-                `
-              }
-              id={this.props.id}
-              style={this.props.style || {}}
-            />
-          </Link>
-        )
-      } else {
-        return (
-          <div
-            className={
-              this.props.className +
-              ' ' +
-              css`
-                -webkit-box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
-                -moz-box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
-                box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
-              `
-            }
-            id={this.props.id}
-            style={this.props.style || {}}
-          />
-        )
-      }
+      return (
+        <div
+          className={
+            this.props.className +
+            ' ' +
+            css`
+              -webkit-box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
+              -moz-box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
+              box-shadow: 10px 10px 40px -23px rgba(194, 194, 194, 1);
+              cursor: pointer;
+            `
+          }
+          id={this.props.id}
+          style={this.props.style || {}}
+        />
+      )
     }
   }
 }

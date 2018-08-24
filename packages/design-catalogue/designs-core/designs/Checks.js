@@ -39,9 +39,7 @@ Checks.defaultProps = {
   width: 300,
   height: 300,
   verticalGap: 20,
-  horizontalGap: 20,
-  link: 'checks',
-  hasDetailsPage: true
+  horizontalGap: 20
 }
 
 Checks.displayName = 'Checks'

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import {
   Checks,
@@ -14,23 +15,27 @@ import {
 import { hoc } from './hoc'
 
 export const ChecksDesign = hoc(props => (
-  <Checks
-    id="checks"
-    width={300}
-    height={300}
-    callback={props.cb}
-    style={{ display: 'block' }}
-  />
+  <Link to="/checks">
+    <Checks
+      id="checks"
+      width={300}
+      height={300}
+      callback={props.cb}
+      style={{ display: 'block' }}
+    />
+  </Link>
 ))
 
 export const CirclesDesign = hoc(props => (
-  <Circles
-    id="circles"
-    width={300}
-    height={300}
-    style={{ display: 'block' }}
-    callback={props.cb}
-  />
+  <Link to="/circles">
+    <Circles
+      id="circles"
+      width={300}
+      height={300}
+      style={{ display: 'block' }}
+      callback={props.cb}
+    />
+  </Link>
 ))
 
 export const PolygonDesign = hoc(props => (
@@ -39,7 +44,7 @@ export const PolygonDesign = hoc(props => (
     width={300}
     height={300}
     callback={props.cb}
-    style={{ background: '#fff1f8', display: 'block' }}
+    style={{ background: '#fff1f8', display: 'block', cursor: 'auto' }}
   />
 ))
 
@@ -50,7 +55,7 @@ export const WaveLinesDesign = hoc(props => (
     height={300}
     scale={3}
     callback={props.cb}
-    style={{ background: '#cd6090', display: 'block' }}
+    style={{ background: '#cd6090', display: 'block', cursor: 'auto' }}
   />
 ))
 
@@ -61,7 +66,7 @@ export const FriederLinesDesign = hoc(props => (
     height={300}
     scale={3}
     callback={props.cb}
-    style={{ display: 'block', background: '#ff7eba' }}
+    style={{ display: 'block', background: '#ff7eba', cursor: 'auto' }}
   />
 ))
 
@@ -71,7 +76,7 @@ export const SottsassDesign = hoc(props => (
     width={300}
     height={300}
     callback={props.cb}
-    style={{ background: '#ff7eba', display: 'block' }}
+    style={{ background: '#ff7eba', display: 'block', cursor: 'auto' }}
   />
 ))
 
@@ -81,7 +86,7 @@ export const DoubleTriangleDesign = hoc(props => (
     width={300}
     height={300}
     callback={props.cb}
-    style={{ background: '#ff68af' }}
+    style={{ background: '#ff68af', cursor: 'auto' }}
   />
 ))
 
@@ -90,7 +95,7 @@ export const MemphisDesign = hoc(props => (
     id="memphis"
     width={300}
     height={300}
-    style={{ background: '#ff7eba' }}
+    style={{ background: '#ff7eba', cursor: 'auto' }}
     callback={props.cb}
   />
 ))

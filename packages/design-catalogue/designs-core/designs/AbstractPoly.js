@@ -73,8 +73,7 @@ AbstractPoly.defaultProps = {
   scaleOffset: 0.0245,
   rotationOffset: 4,
   width: 480,
-  height: 430,
-  hasDetailsPage: false
+  height: 430
 }
 
 export { AbstractPoly }

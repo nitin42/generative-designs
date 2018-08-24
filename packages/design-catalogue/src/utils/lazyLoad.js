@@ -1,5 +1,6 @@
 import React from 'react'
 import { createCache, createResource } from 'simple-cache-provider'
+import { Link } from 'react-router-dom'
 
 import {
   ChecksDesignPlaceholder,
@@ -69,7 +70,11 @@ export const StarFractal = withPlaceholder(
   props => {
     const Fractal = createFractalResource.read(cache, props)
 
-    return <Fractal.StarFractal {...props} />
+    return (
+      <Link to="/star">
+        <Fractal.StarFractal {...props} />
+      </Link>
+    )
   }
 )
 export const ChecksDesign = withPlaceholder(

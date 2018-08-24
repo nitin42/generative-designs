@@ -57,9 +57,7 @@ Circles.defaultProps = {
   height: 300,
   positionOffsetOne: 20,
   positionOffsetTwo: 30,
-  positionOffsetThree: 40,
-  hasDetailsPage: true,
-  link: 'circles'
+  positionOffsetThree: 40
 }
 
 export { Circles }
