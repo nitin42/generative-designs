@@ -7,6 +7,9 @@ import { DoublyTriangle } from '../designs/DoublyTriangle'
 import { Checks } from '../designs/Checks'
 import { MemphisDots } from '../designs/MemphisDots'
 import { AbstractPoly } from '../designs/AbstractPoly'
+import { createDesign } from '../designs/createDesign'
+
+import { startRotation } from '../animations/Rotation'
 
 // Generative designs
 export {
@@ -18,5 +21,7 @@ export {
   DoublyTriangle,
   Checks,
   MemphisDots,
-  AbstractPoly
+  AbstractPoly,
+  createDesign,
+  startRotation
 }
