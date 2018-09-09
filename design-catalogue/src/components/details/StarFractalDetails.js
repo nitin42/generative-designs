@@ -147,7 +147,7 @@ export class StarFractalDetails extends React.Component {
                 />
               </li>
               <li>
-                <label>Inner radius offset</label>
+                <label>Inner radius offset:</label>
                 <RangeSlider
                   name="innerRadiusOffset"
                   min="2"
