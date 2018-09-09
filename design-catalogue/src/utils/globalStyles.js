@@ -14,7 +14,6 @@ injectGlobal`
     display: inline-block;
     width: 125px;
     position: relative;
-    top: 2px;
   }
 
   .slider {
