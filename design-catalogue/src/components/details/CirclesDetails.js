@@ -44,7 +44,7 @@ export class CirclesDetails extends React.Component {
           <Player instance={this.state.instance} />
           <ul>
             <li>
-              Offset red:
+              <label>Offset red:</label>
               <RangeSlider
                 min="10"
                 max="100"
@@ -55,7 +55,7 @@ export class CirclesDetails extends React.Component {
               />
             </li>
             <li>
-              Offset black:
+              <label>Offset black:</label>
               <RangeSlider
                 min="10"
                 max="100"
@@ -66,7 +66,7 @@ export class CirclesDetails extends React.Component {
               />
             </li>
             <li>
-              Offset grey:
+              <label>Offset grey:</label>
               <RangeSlider
                 min="10"
                 max="100"

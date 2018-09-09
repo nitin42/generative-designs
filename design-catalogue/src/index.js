@@ -1,5 +1,5 @@
 import React from 'react'
-import RDOM from 'react-dom'
+import ReactDOM from 'react-dom'
 import { injectGlobal } from 'react-emotion'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
@@ -22,4 +22,4 @@ const App = () => (
   </Router>
 )
 
-RDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))

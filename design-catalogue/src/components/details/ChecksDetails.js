@@ -48,7 +48,7 @@ export class ChecksDetails extends React.Component {
           <Player instance={this.state.instance} />
           <ul>
             <li>
-              Scale offset:{' '}
+              <label>Scale offset:</label>
               <RangeSlider
                 min="0.001"
                 max="0.4"
@@ -58,7 +58,7 @@ export class ChecksDetails extends React.Component {
               />
             </li>
             <li>
-              Rotation offset:{' '}
+              <label>Rotation offset:</label>
               <RangeSlider
                 min="1"
                 max="20"
@@ -69,7 +69,7 @@ export class ChecksDetails extends React.Component {
               />
             </li>
             <li>
-              Vertical space:{' '}
+              <label>Vertical space:</label>
               <RangeSlider
                 min="1"
                 max="100"
@@ -80,7 +80,7 @@ export class ChecksDetails extends React.Component {
               />
             </li>
             <li>
-              Horizontal space:{' '}
+              <label>Horizontal space:</label>
               <RangeSlider
                 min="1"
                 max="100"

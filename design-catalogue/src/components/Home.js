@@ -52,8 +52,7 @@ const Info = props => (
     <p>Hello 👋</p>
     <p>
       You will find a collection of generative designs on the home page.
-      Interact with a design by clicking on the play icon. Clicking on the play
-      icon will start the animation.
+      Interact with a design by clicking on the play icon.
     </p>
     <h3>Parameterization</h3>
     <p>

@@ -5,7 +5,6 @@ import { CompactPicker } from 'react-color'
 export const ColorPicker = props => {
   return (
     <React.Fragment>
-      <span>{props.name}</span>
       <div
         style={{
           width: 20,

@@ -9,7 +9,6 @@ import { DetailContainer } from './DetailContainer'
 import { ErrorBoundary } from '../ErrorBoundary'
 import { Info as InfoModal } from '../Info'
 
-import { ColorPicker } from '../../primitives/ColorPicker'
 import { RangeSlider } from '../../primitives/Slider'
 import { Button } from '../../primitives/Button'
 import { ShadowCanvas } from '../../primitives/Canvas'
@@ -69,12 +68,10 @@ const Info = props => (
       stochastic fractal, which means it is built on probability and randomness.
     </p>
     <p>
-      You can generate different designs of this fractal by changing the
-      parameters like <b>length</b>, <b>sides</b>, and <b>radius offsets.</b>
+      By changing the parameters like <b>length</b>, <b>sides</b>, and{' '}
+      <b>radius offsets</b>, you can generate different designs of this fractal.
     </p>
-    <p>
-      Try changing any of the parameters and see how it transforms the fractal.
-    </p>
+    <p>Try changing the parameters and see how it transforms the fractal.</p>
   </div>
 )
 
@@ -130,7 +127,7 @@ export class StarFractalDetails extends React.Component {
             />
             <ul>
               <li>
-                Length:{' '}
+                <label>Length: </label>
                 <RangeSlider
                   name="length"
                   min="1"
@@ -140,7 +137,7 @@ export class StarFractalDetails extends React.Component {
                 />
               </li>
               <li>
-                Sides: &nbsp;&nbsp;&nbsp;
+                <label>Sides:</label>
                 <RangeSlider
                   name="sides"
                   min="1"
@@ -150,29 +147,7 @@ export class StarFractalDetails extends React.Component {
                 />
               </li>
               <li>
-                <ColorPicker
-                  name="Fill:"
-                  color={this.state.fill}
-                  show={this.state.showFillColorPicker}
-                  clickHandler={e =>
-                    this.toggleColorPicker('showFillColorPicker')
-                  }
-                  handleColorChange={color => this.updateColor(color, 'fill')}
-                />
-              </li>
-              <li>
-                <ColorPicker
-                  name="Stroke:"
-                  color={this.state.stroke}
-                  show={this.state.showStrokeColorPicker}
-                  clickHandler={e =>
-                    this.toggleColorPicker('showStrokeColorPicker')
-                  }
-                  handleColorChange={color => this.updateColor(color, 'stroke')}
-                />
-              </li>
-              <li>
-                Inner radius offset:{' '}
+                <label>Inner radius offset</label>
                 <RangeSlider
                   name="innerRadiusOffset"
                   min="2"
@@ -182,7 +157,7 @@ export class StarFractalDetails extends React.Component {
                 />
               </li>
               <li>
-                Outer radius offset:{' '}
+                <label>Outer radius offset:</label>
                 <RangeSlider
                   name="outerRadiusOffset"
                   min="2"
