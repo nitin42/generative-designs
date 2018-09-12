@@ -1,15 +1,10 @@
 {
   "name": "generative-design",
-  "version": "0.5.0",
   "description": "Catalogue of generative art",
-  "main": "build/generative-design.js",
-  "module": "build/generative-design.es.js",
-  "unpkg": "build/generative-design.min.js",
   "author": "Nitin Tulswani",
   "license": "MIT",
   "dependencies": {
     "emotion": "^9.2.6",
-    "react-color": "^2.14.1",
     "react-emotion": "^9.2.6",
     "react-responsive-modal": "^3.2.0",
     "react-router-dom": "^4.3.1",
@@ -30,17 +25,12 @@
     "lerna": "^3.1.4",
     "lint-staged": "^7.2.0",
     "parcel-bundler": "^1.9.7",
-    "prettier": "^1.14.2",
-    "rollup": "^0.64.1",
-    "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-uglify": "^4.0.0"
+    "prettier": "^1.14.2"
   },
   "scripts": {
     "start": "parcel ./design-catalogue/public/index.html",
-    "build:catalogue": "NODE_ENV=production parcel build ./design-catalogue/src/index.js",
-    "deploy": "yarn build:catalogue && surge",
-    "build:designs": "rollup -c"
+    "build": "NODE_ENV=production parcel build ./design-catalogue/src/index.js",
+    "deploy": "yarn build && surge"
   },
   "husky": {
     "hooks": {

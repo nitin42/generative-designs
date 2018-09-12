@@ -3,12 +3,9 @@ import { css } from 'emotion'
 import { Link } from 'react-router-dom'
 
 import { StarFractal } from '../../../designs-core/src'
-
 import { DetailContainer } from './DetailContainer'
-
 import { ErrorBoundary } from '../ErrorBoundary'
 import { Info as InfoModal } from '../Info'
-
 import { RangeSlider } from '../../primitives/Slider'
 import { Button } from '../../primitives/Button'
 import { ShadowCanvas } from '../../primitives/Canvas'
@@ -80,11 +77,7 @@ export class StarFractalDetails extends React.Component {
     length: 80,
     sides: 4,
     outerRadiusOffset: 2,
-    innerRadiusOffset: 2,
-    fill: 'pink',
-    stroke: 'mistyrose',
-    showFillColorPicker: false,
-    showStrokeColorPicker: false
+    innerRadiusOffset: 2
   }
 
   componentDidMount() {
@@ -95,13 +88,6 @@ export class StarFractalDetails extends React.Component {
   }
 
   updateState = (e, prop) => this.setState({ [prop]: parseInt(e.target.value) })
-
-  toggleColorPicker = type =>
-    this.setState(state => ({
-      [type]: !state[type]
-    }))
-
-  updateColor = (color, type) => this.setState({ [type]: color.hex })
 
   render() {
     return (
@@ -120,8 +106,8 @@ export class StarFractalDetails extends React.Component {
               sides={this.state.sides}
               style={{ display: 'block' }}
               className="animated zoomIn"
-              fill={this.state.fill}
-              stroke={this.state.stroke}
+              fill="pink"
+              stroke="mistyrose"
               innerRadiusOffset={this.state.innerRadiusOffset}
               outerRadiusOffset={this.state.outerRadiusOffset}
             />
