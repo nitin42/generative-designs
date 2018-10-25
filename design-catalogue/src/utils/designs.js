@@ -59,17 +59,6 @@ export const WaveLinesDesign = hoc(props => (
   />
 ))
 
-export const FriederLinesDesign = hoc(props => (
-  <FriederLines
-    id="frieder"
-    width={300}
-    height={300}
-    scale={3}
-    callback={props.cb}
-    style={{ display: 'block', background: '#ff7eba', cursor: 'auto' }}
-  />
-))
-
 export const SottsassDesign = hoc(props => (
   <SottsassPattern
     id="sottsass"
@@ -87,15 +76,5 @@ export const DoubleTriangleDesign = hoc(props => (
     height={300}
     callback={props.cb}
     style={{ background: '#ff68af', cursor: 'auto' }}
-  />
-))
-
-export const MemphisDesign = hoc(props => (
-  <MemphisDots
-    id="memphis"
-    width={300}
-    height={300}
-    style={{ background: '#ff7eba', cursor: 'auto' }}
-    callback={props.cb}
   />
 ))

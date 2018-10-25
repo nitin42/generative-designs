@@ -5,9 +5,7 @@ const PLACEHOLDER_BACKGROUND = {
   POLYGON: '#fff1f8',
   SOTTSASS: '#ff7eba',
   DTDESIGN: '#ff68af',
-  WAVES: '#cd6090',
-  FRIEDER: '#ff7eba',
-  MEMPHIS: '#ff7eba'
+  WAVES: '#cd6090'
 }
 
 const StyledPlaceholder = styled('div')`
@@ -102,9 +100,3 @@ export const DTDesignPlaceholder = loaderColor =>
 
 export const WaveLinesDesignPlaceholder = loaderColor =>
   createPlaceholder(PLACEHOLDER_BACKGROUND.WAVES, loaderColor)
-
-export const FriederLinesDesignPlaceholder = loaderColor =>
-  createPlaceholder(PLACEHOLDER_BACKGROUND.FRIEDER, loaderColor)
-
-export const MemphisDesignPlaceholder = loaderColor =>
-  createPlaceholder(PLACEHOLDER_BACKGROUND.MEMPHIS, loaderColor)

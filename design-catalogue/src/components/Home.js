@@ -10,10 +10,8 @@ import {
   ChecksDesign,
   StarFractal,
   PolygonDesign,
-  FriederLines,
   WavyLines,
   Circles,
-  MemphisDots,
   DoublyTriangle,
   SottsassPattern
 } from '../utils/lazyLoad'
@@ -98,9 +96,7 @@ export const Home = props => (
       <PolygonDesign />
       <SottsassPattern />
       <WavyLines />
-      <FriederLines />
       <Circles />
-      <MemphisDots />
       <DoublyTriangle />
     </Catalogue>
     <Footer />

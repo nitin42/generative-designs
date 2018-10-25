@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 import {
   ChecksDesignPlaceholder,
   PolygonDesignPlaceholder,
-  MemphisDesignPlaceholder,
-  FriederLinesDesignPlaceholder,
   DTDesignPlaceholder,
   WaveLinesDesignPlaceholder,
   SottsassDesignPlaceholder
@@ -87,11 +85,7 @@ export const PolygonDesign = withPlaceholder(
   PolygonDesignPlaceholder(LOADER_COLOR.POLYGON),
   getDesignComponent('PolygonDesign')
 )
-export const FriederLines = withPlaceholder(
-  DEFAULT_DELAY,
-  FriederLinesDesignPlaceholder(LOADER_COLOR.FRIEDER),
-  getDesignComponent('FriederLinesDesign')
-)
+
 export const WavyLines = withPlaceholder(
   DEFAULT_DELAY,
   WaveLinesDesignPlaceholder(LOADER_COLOR.WAVES),
@@ -107,11 +101,7 @@ export const DoublyTriangle = withPlaceholder(
   DTDesignPlaceholder(LOADER_COLOR.TRIANGLE),
   getDesignComponent('DoubleTriangleDesign')
 )
-export const MemphisDots = withPlaceholder(
-  DEFAULT_DELAY,
-  MemphisDesignPlaceholder(LOADER_COLOR.MEMPHIS),
-  getDesignComponent('MemphisDesign')
-)
+
 export const SottsassPattern = withPlaceholder(
   DEFAULT_DELAY,
   SottsassDesignPlaceholder(LOADER_COLOR.SOTTSASS),
